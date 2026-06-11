@@ -38,6 +38,7 @@
      ─────────────────────────────────────────────────────────── */
   const intro = $("#intro");
   let introDone = false;
+  const introHooks = []; // run once the experience is revealed
 
   function finishIntro() {
     if (introDone) return;
@@ -46,6 +47,7 @@
     document.body.classList.remove("no-scroll");
     $("#nav").classList.add("show");
     $("#hero").classList.add("live");
+    introHooks.forEach((fn) => fn());
     setTimeout(() => intro.classList.add("gone"), 1100);
   }
 
@@ -56,6 +58,7 @@
       $("#hero").classList.add("live");
       if (intro) intro.classList.add("gone");
       introDone = true;
+      introHooks.forEach((fn) => fn());
       return;
     }
     document.body.classList.add("no-scroll");
@@ -321,6 +324,44 @@
   })();
 
   /* ───────────────────────────────────────────────────────────
+     HERO DEPTH — parallax chips + console tilt + living shadow
+     ─────────────────────────────────────────────────────────── */
+  (function heroDepth() {
+    const hero = $("#hero");
+    if (!hero || reduced || !hoverable) return;
+    const chips = $$(".hchip", hero);
+    const console_ = $("#heroConsole");
+    console_.style.animation = "none"; // JS takes over float + tilt
+    let tx = 0, ty = 0, mx = 0, my = 0, raf = null;
+
+    hero.addEventListener("mousemove", (e) => {
+      const r = hero.getBoundingClientRect();
+      tx = (e.clientX - r.left) / r.width - 0.5;
+      ty = (e.clientY - r.top) / r.height - 0.5;
+    }, { passive: true });
+    hero.addEventListener("mouseleave", () => { tx = ty = 0; });
+
+    function frame(now) {
+      raf = requestAnimationFrame(frame);
+      mx = lerp(mx, tx, 0.06); my = lerp(my, ty, 0.06);
+      chips.forEach((c, i) => {
+        const d = +c.dataset.depth || 20;
+        const bob = Math.sin(now / 1400 + i * 1.7) * 7;
+        c.style.transform = `translate3d(${-mx * d}px, ${-my * d + bob}px, 0)`;
+      });
+      const bob = Math.sin(now / 1800) * 7;
+      console_.style.transform =
+        `translateY(${bob}px) perspective(1100px) rotateY(${mx * 4.5}deg) rotateX(${-my * 4}deg)`;
+      console_.style.boxShadow =
+        `${-mx * 30}px ${18 - my * 16}px 60px rgba(0,22,57,.14)`;
+    }
+    new IntersectionObserver((en) => {
+      if (en[0].isIntersecting) { if (!raf) raf = requestAnimationFrame(frame); }
+      else if (raf) { cancelAnimationFrame(raf); raf = null; }
+    }).observe(hero);
+  })();
+
+  /* ───────────────────────────────────────────────────────────
      HERO CONSOLE — Ava's live activity feed
      ─────────────────────────────────────────────────────────── */
   (function heroConsole() {
@@ -383,6 +424,231 @@
   });
 
   /* ───────────────────────────────────────────────────────────
+     ORB FACTORY — Ava rendered as a living particle core
+     ─────────────────────────────────────────────────────────── */
+  function createOrb(canvas, opts = {}) {
+    const ctx = canvas.getContext("2d");
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    let w = 0, h = 0;
+    const fit = () => {
+      w = canvas.clientWidth; h = canvas.clientHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    fit();
+    addEventListener("resize", fit, { passive: true });
+
+    const N = opts.particles || 22;
+    const pts = Array.from({ length: N }, () => ({
+      a: Math.random() * Math.PI * 2,
+      r: 0.6 + Math.random() * 0.3,
+      sp: 0.5 + Math.random() * 0.8,
+      tilt: Math.random() * Math.PI,
+    }));
+    const TARGET = { idle: 0.22, listen: 0.62, think: 1 };
+    let mode = "idle", energy = 0.22, look = { x: 0, y: 0 };
+    let raf = null, last = 0, t = 0;
+
+    function frame(now) {
+      raf = requestAnimationFrame(frame);
+      const dt = Math.min(50, now - last) / 1000;
+      last = now;
+      energy += (TARGET[mode] - energy) * Math.min(1, dt * 3);
+      t += dt * (0.6 + energy * 2);
+      ctx.clearRect(0, 0, w, h);
+      const R = Math.min(w, h) * 0.5;
+      const cx = w / 2 + look.x * R * 0.14, cy = h / 2 + look.y * R * 0.14;
+
+      const glow = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 0.95);
+      glow.addColorStop(0, `rgba(255,88,90,${0.5 + energy * 0.3})`);
+      glow.addColorStop(0.45, `rgba(255,88,90,${0.14 + energy * 0.12})`);
+      glow.addColorStop(1, "rgba(255,88,90,0)");
+      ctx.fillStyle = glow;
+      ctx.beginPath(); ctx.arc(cx, cy, R * 0.95, 0, Math.PI * 2); ctx.fill();
+
+      const pulse = 1 + Math.sin(t * 3) * 0.05 * (0.4 + energy);
+      ctx.fillStyle = CORAL;
+      ctx.beginPath(); ctx.arc(cx, cy, R * 0.3 * pulse, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = "rgba(255,255,255,.8)";
+      ctx.beginPath(); ctx.arc(cx - R * 0.08, cy - R * 0.1, R * 0.085, 0, Math.PI * 2); ctx.fill();
+
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = opts.dark
+        ? `rgba(255,255,255,${0.16 + energy * 0.2})`
+        : `rgba(0,22,57,${0.12 + energy * 0.18})`;
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, R * 0.72, R * 0.72 * (0.34 + 0.08 * Math.sin(t * 0.7)), t * 0.3, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, R * 0.8, R * 0.8 * 0.3, -t * 0.22, 0, Math.PI * 2);
+      ctx.stroke();
+
+      for (const p of pts) {
+        p.a += dt * p.sp * (0.5 + energy * 2.6);
+        const depth = 0.55 + 0.45 * Math.sin(p.a * 2 + p.tilt);
+        const px = cx + Math.cos(p.a) * R * p.r;
+        const py = cy + Math.sin(p.a) * R * p.r * Math.cos(p.tilt + t * (mode === "think" ? 0.8 : 0.2));
+        ctx.fillStyle = `rgba(255,88,90,${0.25 + 0.6 * depth})`;
+        ctx.beginPath(); ctx.arc(px, py, (0.8 + depth * 1.3) * (opts.scale || 1), 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    return {
+      set mode(m) { mode = m; },
+      get mode() { return mode; },
+      look(x, y) { look.x = x; look.y = y; },
+      start() { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } },
+      stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } },
+    };
+  }
+
+  /* ───────────────────────────────────────────────────────────
+     AVA — the entity that follows you through the experience
+     ─────────────────────────────────────────────────────────── */
+  const ava = (() => {
+    const el = $("#avaOrb");
+    if (!el || reduced) return { set() {}, say() {}, idle() {} };
+    const orb = createOrb($("#avaOrbCanvas"), { particles: 18, scale: 0.8 });
+    const label = $("#orbLabel");
+    let labelTimer = null;
+
+    function say(text, ms = 2600) {
+      label.textContent = text;
+      el.classList.add("talk", "speaking");
+      clearTimeout(labelTimer);
+      labelTimer = setTimeout(() => el.classList.remove("talk", "speaking"), ms);
+    }
+    function set(mode, text) { orb.mode = mode; if (text) say(text); }
+
+    introHooks.push(() => {
+      el.classList.add("show");
+      orb.start();
+      setTimeout(() => say("Hi, I'm Ava."), 900);
+    });
+
+    if (hoverable) {
+      addEventListener("mousemove", (e) => {
+        const r = el.getBoundingClientRect();
+        orb.look(
+          clamp((e.clientX - (r.left + r.width / 2)) / (innerWidth / 2), -1, 1),
+          clamp((e.clientY - (r.top + r.height / 2)) / (innerHeight / 2), -1, 1)
+        );
+      }, { passive: true });
+    }
+
+    let settleTimer = null;
+    addEventListener("scroll", () => {
+      if (orb.mode === "idle") orb.mode = "listen";
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(() => { if (orb.mode === "listen") orb.mode = "idle"; }, 450);
+    }, { passive: true });
+
+    el.addEventListener("click", () => {
+      say("Watch this…");
+      $("#demo").scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => { if (demo && !demo.busy) demo.fire("seller"); }, 900);
+    });
+
+    /* step aside for the finale, where Ava takes the stage herself */
+    const finale = $("#finale");
+    if (finale) {
+      new IntersectionObserver((en) => {
+        el.classList.toggle("hide", en[0].isIntersecting);
+      }, { threshold: 0.2 }).observe(finale);
+    }
+    return { set, say, idle() { set("idle"); } };
+  })();
+
+  /* ───────────────────────────────────────────────────────────
+     COGNITION — Ava's visible thinking engine
+     ─────────────────────────────────────────────────────────── */
+  const cog = (() => {
+    const wrap = $("#cognition");
+    if (!wrap || reduced) return { run() {}, idle() {} };
+    const canvas = $("#cogCanvas"), textEl = $("#cogText");
+    const ctx = canvas.getContext("2d");
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    let w = 0, h = 0;
+    const fit = () => {
+      w = canvas.clientWidth; h = canvas.clientHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      build();
+    };
+    let nodes = [], edges = [];
+    function build() {
+      nodes = Array.from({ length: 9 }, (_, i) => ({
+        x: 14 + (i / 8) * (w * 0.62),
+        y: h * (0.28 + 0.48 * ((i * 37) % 10) / 10),
+        ph: Math.random() * Math.PI * 2,
+      }));
+      edges = [];
+      for (let i = 0; i < nodes.length; i++)
+        for (let j = i + 1; j < nodes.length; j++)
+          if (Math.abs(nodes[i].x - nodes[j].x) < w * 0.2) edges.push([i, j]);
+    }
+    fit();
+    addEventListener("resize", fit, { passive: true });
+
+    const PHRASES = [
+      "Analysing caller…", "Checking CRM…", "Searching applicant database…",
+      "AML verification running…", "Matching property requirements…",
+      "Valuation slot available…",
+    ];
+    let level = 0.12, target = 0.12, pulses = [], raf = null, last = 0, phraseTimer = null, pi = 0;
+
+    function frame(now) {
+      raf = requestAnimationFrame(frame);
+      const dt = Math.min(50, now - last) / 1000;
+      last = now;
+      level += (target - level) * Math.min(1, dt * 3);
+      ctx.clearRect(0, 0, w, h);
+      ctx.lineWidth = 1;
+      for (const [i, j] of edges) {
+        ctx.strokeStyle = `rgba(0,22,57,${0.06 + level * 0.1})`;
+        ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.stroke();
+      }
+      if (Math.random() < level * 0.22 && edges.length) {
+        pulses.push({ e: edges[(Math.random() * edges.length) | 0], p: 0, sp: 1.4 + Math.random() });
+      }
+      pulses = pulses.filter((pu) => {
+        pu.p += dt * pu.sp;
+        if (pu.p >= 1) return false;
+        const [i, j] = pu.e;
+        const x = lerp(nodes[i].x, nodes[j].x, pu.p);
+        const y = lerp(nodes[i].y, nodes[j].y, pu.p);
+        ctx.fillStyle = `rgba(255,88,90,${0.9 - pu.p * 0.5})`;
+        ctx.beginPath(); ctx.arc(x, y, 1.8, 0, Math.PI * 2); ctx.fill();
+        return true;
+      });
+      for (const n of nodes) {
+        const tw = 0.5 + 0.5 * Math.sin(now / 500 + n.ph);
+        ctx.fillStyle = `rgba(255,88,90,${0.25 + level * 0.55 * tw})`;
+        ctx.beginPath(); ctx.arc(n.x, n.y, 2 + level * 1.6 * tw, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    new IntersectionObserver((en) => {
+      if (en[0].isIntersecting) { if (!raf) { last = performance.now(); raf = requestAnimationFrame(frame); } }
+      else if (raf) { cancelAnimationFrame(raf); raf = null; }
+    }, { threshold: 0.1 }).observe(wrap);
+
+    return {
+      run(label) {
+        target = 1;
+        wrap.classList.add("active");
+        textEl.textContent = label || PHRASES[pi++ % PHRASES.length];
+        clearInterval(phraseTimer);
+        phraseTimer = setInterval(() => { textEl.textContent = PHRASES[pi++ % PHRASES.length]; }, 1600);
+      },
+      idle() {
+        target = 0.12;
+        wrap.classList.remove("active");
+        clearInterval(phraseTimer);
+        textEl.textContent = "Cognition idle";
+      },
+    };
+  })();
+
+  /* ───────────────────────────────────────────────────────────
      INTERACTIVE DEMO — scenario engine
      ─────────────────────────────────────────────────────────── */
   const demo = (() => {
@@ -390,7 +656,9 @@
     if (!stage) return null;
     const transcript = $("#stageTranscript"), actions = $("#stageActions"),
           toasts = $("#stageToasts"), wave = $("#callWave"),
-          status = $("#demoStatus"), triggers = $$(".trigger");
+          status = $("#demoStatus"), triggers = $$(".trigger"),
+          banner = $("#incomingBanner");
+    let bannerTimer = null;
     const kpis = { leads: $("#kLeads"), vals: $("#kVals"), views: $("#kViews"), aml: $("#kAml") };
     const counts = { leads: 12, vals: 4, views: 9, aml: 6 };
     let busy = false, timers = [];
@@ -421,12 +689,15 @@
         li.className = "a-item thinking";
         li.innerHTML = icon("i-bolt") + `<span>${label} <i></i><i></i><i></i></span>`;
         actions.append(li); capHead(actions, 6);
+        cog.run(label + "…");
+        ava.set("think");
         return li;
       },
       resolve(li, iconName, html) {
         li.classList.remove("thinking");
         li.classList.add("done");
         li.innerHTML = icon("i-check") + `<span>${html}</span>`;
+        if (!actions.querySelector(".thinking")) cog.idle();
       },
       toast(text) {
         const div = document.createElement("div");
@@ -456,11 +727,23 @@
         li.innerHTML = `<span class="crm-tag${cool ? " crm-tag--cool" : ""}">${tag}</span><em>${label}</em>`;
         $("#stageCrm").prepend(li); capTail($("#stageCrm"), 3);
       },
-      wave(on) { wave.classList.toggle("on", on); },
+      wave(on) {
+        wave.classList.toggle("on", on);
+        if (on) {
+          banner.classList.add("on");
+          clearTimeout(bannerTimer);
+          bannerTimer = setTimeout(() => banner.classList.remove("on"), 2000);
+          ava.set("listen");
+        } else {
+          banner.classList.remove("on");
+        }
+      },
       status(text, isBusy) {
         status.innerHTML = `<span class="pulse-dot" aria-hidden="true"></span>${text}`;
         status.classList.toggle("busy", !!isBusy);
         stage.classList.toggle("active", !!isBusy);
+        if (isBusy) ava.set("listen", "On it…");
+        else { ava.set("idle", "Handled ✓"); cog.idle(); }
       },
     };
 
@@ -608,9 +891,9 @@
     if (!track) return;
 
     const TASKS = [
-      ["i-phone", "Missed call — vendor", 4, 6, true],
-      ["i-shield", "AML overdue — Elm Rd", 38, 2, true],
-      ["i-phone", "Call queue: 11 waiting", 70, 8, true],
+      ["i-phone", "Missed call — vendor", 4, 14, true],
+      ["i-shield", "AML overdue — Elm Rd", 38, 12, true],
+      ["i-phone", "Call queue: 11 waiting", 70, 16, true],
       ["i-doc", "EPC expired — Flat 3", 8, 30, false],
       ["i-cal", "Valuation unbooked", 44, 26, true],
       ["i-chat", "Portal enquiry — 2d old", 74, 34, false],
@@ -622,16 +905,28 @@
       ["i-chat", "Applicant unanswered", 73, 86, false],
     ];
 
-    const tasks = TASKS.map(([icon, label, x, y, alert]) => {
+    const tasks = TASKS.map(([icon, label, x, y, alert], i) => {
       const el = document.createElement("div");
       el.className = "story-task" + (alert ? " story-task--alert" : "");
-      el.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg><span>${label}</span>`;
+      el.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#${icon}"/></svg><span>${label}</span>` +
+        (alert ? `<span class="badge">+${1 + (i % 3)}</span>` : "");
       el.style.left = x + "%";
       el.style.top = y + "%";
       el.style.opacity = reduced ? 1 : 0;
       board.append(el);
       return { el, x, y };
     });
+
+    const phonesWrap = $("#storyPhones");
+    const phones = Array.from({ length: 6 }, () => {
+      const s = document.createElement("span");
+      s.className = "sphone";
+      s.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>`;
+      phonesWrap.append(s);
+      return s;
+    });
+    const flash = $("#storyFlash");
+    let flashed = false;
 
     if (reduced) return;
 
@@ -666,6 +961,18 @@
       meterFill.style.transform = `scaleX(${load / 100})`;
       meterRead.textContent = Math.round(load) + "%";
       meterLabel.textContent = load > 60 ? "Office load — critical" : load > 25 ? "Office load" : "Office load — calm";
+
+      /* phones: ring through the chaos, answered once Ava lands */
+      const ringN = p < 0.5 ? Math.round(clamp(p / 0.4, 0, 1) * 6) : 0;
+      const okN = p >= 0.5 ? Math.round(clamp((p - 0.52) / 0.26, 0, 1) * 6) : 0;
+      phones.forEach((ph, i) => {
+        ph.classList.toggle("ring", i < ringN && okN <= i);
+        ph.classList.toggle("ok", i < okN);
+      });
+
+      /* activation flash the moment Ava clocks in */
+      if (p >= 0.5 && !flashed) { flashed = true; flash.classList.add("go"); }
+      else if (p < 0.42 && flashed) { flashed = false; flash.classList.remove("go"); }
 
       /* Ava arrives */
       const avaIn = clamp((p - 0.46) / 0.1, 0, 1);
@@ -741,6 +1048,86 @@
   })();
 
   /* ───────────────────────────────────────────────────────────
+     MISSION CONTROL — health score, call queue, CRM sync, scoring
+     ─────────────────────────────────────────────────────────── */
+  (function missionControl() {
+    const section = $("#command");
+    if (!section) return;
+
+    /* Agency health gauge */
+    const healthRing = $("#healthRing"), healthPct = $("#healthPct"), healthLabel = $("#healthLabel");
+    if (healthRing) {
+      const HEALTH = 94;
+      new IntersectionObserver((en, io) => {
+        if (!en[0].isIntersecting) return;
+        healthRing.style.strokeDashoffset = (326.7 * (1 - HEALTH / 100)).toFixed(1);
+        tween(healthPct, 0, HEALTH, { dur: 1800 });
+        setTimeout(() => { healthLabel.textContent = "Excellent — every signal green"; }, 1400);
+        io.unobserve(healthRing);
+      }, { threshold: 0.5 }).observe(healthRing);
+    }
+
+    /* Live call queue — callers appear, Ava answers, queue drains */
+    const queue = $("#callQueue");
+    const CALLERS = [
+      ["S. Bennett", "vendor"], ["M. Iqbal", "applicant"], ["T. Kowalski", "landlord"],
+      ["R. Adeyemi", "buyer"], ["H. Fletcher", "vendor"], ["J. Marsh", "tenant"],
+    ];
+    let qi = 0, qTimer = null;
+    function enqueue() {
+      const [name, kind] = CALLERS[qi++ % CALLERS.length];
+      const li = document.createElement("li");
+      li.className = "answering";
+      li.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>${name} · ${kind}</span><em>answering</em>`;
+      queue.prepend(li);
+      setTimeout(() => { li.classList.remove("answering"); li.querySelector("em").textContent = "handled ✓"; }, 1000);
+      setTimeout(() => li.classList.add("out"), 3600);
+      setTimeout(() => li.remove(), 4100);
+      while (queue.children.length > 3) queue.lastElementChild.remove();
+    }
+
+    /* CRM sync — heartbeat + write log */
+    const syncAgo = $("#syncAgo"), syncLog = $("#syncLog");
+    const WRITES = [
+      "Contact created — S. Okafor", "Transcript attached — call #1042",
+      "Task assigned — callback 10:00", "Valuation synced — Thu 14:30",
+      "Lead score updated — 87 → 91", "Viewing logged — Marlow Court",
+    ];
+    let wi = 0, syncTimer = null;
+    function syncTick() {
+      syncAgo.textContent = 1 + ((Math.random() * 3) | 0);
+      const li = document.createElement("li");
+      li.textContent = WRITES[wi++ % WRITES.length];
+      syncLog.prepend(li);
+      while (syncLog.children.length > 3) syncLog.lastElementChild.remove();
+    }
+
+    /* Lead scores drift as Ava re-qualifies */
+    const scoreRows = $$("#leadScores li");
+    let scoreTimer = null;
+    function scoreTick() {
+      const row = scoreRows[(Math.random() * scoreRows.length) | 0];
+      const em = row.querySelector("em"), bar = row.querySelector("i");
+      const next = clamp(+em.textContent + ((Math.random() * 7) | 0) - 2, 55, 98);
+      tween(em, +em.textContent, next, { dur: 700 });
+      bar.style.setProperty("--s", next + "%");
+    }
+
+    new IntersectionObserver((en) => {
+      if (en[0].isIntersecting && !qTimer) {
+        enqueue();
+        qTimer = setInterval(enqueue, 2800);
+        syncTimer = setInterval(syncTick, 2200);
+        scoreTimer = setInterval(scoreTick, 3600);
+        syncTick();
+      } else if (!en[0].isIntersecting && qTimer) {
+        clearInterval(qTimer); clearInterval(syncTimer); clearInterval(scoreTimer);
+        qTimer = syncTimer = scoreTimer = null;
+      }
+    }, { threshold: 0.12 }).observe(section);
+  })();
+
+  /* ───────────────────────────────────────────────────────────
      HOW IT WORKS — the line draws itself
      ─────────────────────────────────────────────────────────── */
   (function howLine() {
@@ -756,10 +1143,46 @@
   /* ───────────────────────────────────────────────────────────
      NIGHT — the 02:17am loop
      ─────────────────────────────────────────────────────────── */
+  (function nightStars() {
+    const cv = $("#nightStars");
+    if (!cv || reduced) return;
+    const ctx = cv.getContext("2d");
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    let w, h, stars = [], raf = null;
+    const fit = () => {
+      w = cv.clientWidth; h = cv.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      stars = Array.from({ length: Math.min(90, (w * h / 9000) | 0) }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        r: 0.5 + Math.random() * 1.2,
+        ph: Math.random() * Math.PI * 2,
+        sp: 0.4 + Math.random() * 1.2,
+        coral: Math.random() < 0.08,
+      }));
+    };
+    fit();
+    addEventListener("resize", fit, { passive: true });
+    function frame(now) {
+      raf = requestAnimationFrame(frame);
+      ctx.clearRect(0, 0, w, h);
+      for (const s of stars) {
+        const tw = 0.35 + 0.65 * (0.5 + 0.5 * Math.sin(now / 700 * s.sp + s.ph));
+        ctx.fillStyle = s.coral ? `rgba(255,88,90,${tw * 0.9})` : `rgba(255,255,255,${tw * 0.5})`;
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r * tw, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    new IntersectionObserver((en) => {
+      if (en[0].isIntersecting) { if (!raf) raf = requestAnimationFrame(frame); }
+      else if (raf) { cancelAnimationFrame(raf); raf = null; }
+    }, { threshold: 0.05 }).observe(cv);
+  })();
+
   (function night() {
     const stage = $("#nightStage");
     if (!stage) return;
-    const clock = $("#nightClock"), events = $$(".night-ev", stage), fin = $("#nightFinal");
+    const clock = $("#nightClock"), events = $$(".night-ev", stage), fin = $("#nightFinal"),
+          saved = $("#nightSaved"), savedNum = $("#nightSavedNum");
     const toSec = (t) => t.split(":").reduce((a, v) => a * 60 + +v, 0);
     const toStr = (s) => [s / 3600, (s / 60) % 60, s % 60].map((v) => String(Math.floor(v)).padStart(2, "0")).join(":");
     let running = false, cancelled = false;
@@ -784,6 +1207,8 @@
       while (!cancelled) {
         events.forEach((e) => e.classList.remove("on"));
         fin.classList.remove("on");
+        saved.classList.remove("on");
+        savedNum.textContent = "£0";
         let prev = toSec(events[0].dataset.time);
         clock.textContent = toStr(prev);
         await wait(500);
@@ -796,8 +1221,11 @@
           await wait(1250);
         }
         if (cancelled) break;
+        saved.classList.add("on");
+        tween(savedNum, 0, 3800, { dur: 1200, prefix: "£" });
+        await wait(1400);
         fin.classList.add("on");
-        await wait(3400);
+        await wait(3600);
       }
       running = false;
     }
@@ -810,7 +1238,81 @@
     if (reduced) {
       events.forEach((e) => e.classList.add("on"));
       fin.classList.add("on");
+      saved.classList.add("on");
+      savedNum.textContent = "£3,800";
     }
+  })();
+
+  /* ───────────────────────────────────────────────────────────
+     FINALE — Ava floating in a dark particle field
+     ─────────────────────────────────────────────────────────── */
+  (function finale() {
+    const section = $("#finale");
+    if (!section || reduced) return;
+
+    const orbCv = $("#finaleOrbCanvas");
+    const orb = orbCv ? createOrb(orbCv, { particles: 30, scale: 1.4, dark: true }) : null;
+    if (orb) orb.mode = "listen";
+
+    const cv = $("#finaleNet");
+    const ctx = cv.getContext("2d");
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    let w, h, pts = [], raf = null;
+    const fit = () => {
+      w = cv.clientWidth; h = cv.clientHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const N = Math.min(80, (w * h / 22000) | 0);
+      pts = Array.from({ length: N }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        coral: Math.random() < 0.18,
+      }));
+    };
+    fit();
+    addEventListener("resize", fit, { passive: true });
+
+    function frame() {
+      raf = requestAnimationFrame(frame);
+      ctx.clearRect(0, 0, w, h);
+      const cx = w / 2, cy = h * 0.42, LINK = 130;
+      for (const p of pts) {
+        /* slow gravitational drift around Ava */
+        const dx = cx - p.x, dy = cy - p.y;
+        const d = Math.hypot(dx, dy) || 1;
+        p.vx += (dx / d) * 0.0011; p.vy += (dy / d) * 0.0011;
+        p.vx *= 0.998; p.vy *= 0.998;
+        p.x += p.vx; p.y += p.vy;
+      }
+      ctx.lineWidth = 1;
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const a = pts[i], b = pts[j];
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < LINK) {
+            const alpha = (1 - d / LINK) * 0.14;
+            ctx.strokeStyle = (a.coral || b.coral)
+              ? `rgba(255,88,90,${alpha * 1.4})`
+              : `rgba(255,255,255,${alpha})`;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+      }
+      for (const p of pts) {
+        ctx.fillStyle = p.coral ? "rgba(255,88,90,.8)" : "rgba(255,255,255,.4)";
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.coral ? 2 : 1.4, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    new IntersectionObserver((en) => {
+      if (en[0].isIntersecting) {
+        if (!raf) raf = requestAnimationFrame(frame);
+        orb?.start();
+      } else {
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+        orb?.stop();
+      }
+    }, { threshold: 0.05 }).observe(section);
   })();
 
   /* ───────────────────────────────────────────────────────────

@@ -45,7 +45,18 @@ python3 -m http.server 8000
   lead qualified, valuation booked, CRM updated, AML started, negotiator
   notified.
 - **ROI calculator** — four sliders, live-tweening outputs, honest assumptions.
-- **Finale** — "The future agency already has an AI employee. Meet Ava."
+- **Finale** — a dark cinematic field: Ava's orb floating in a gravitational
+  particle network. "The future agency already has an AI employee. Meet Ava."
+
+### Ava, the living entity
+
+Ava exists as a persistent presence — a particle-core orb that follows you
+through the experience. She looks toward your cursor, stirs when you scroll,
+speaks ("Hi, I'm Ava." / "On it…" / "Handled ✓"), shifts into a visible
+*thinking* state while scenarios run, and steps aside at the finale where she
+takes the stage at full size. Her cognition is also rendered live in the demo —
+a neural strip where pulses travel between nodes while she reasons
+("Analysing caller…", "Checking CRM…", "AML verification running…").
 
 Cursor glow, magnetic buttons, 3D card tilt, infinite marquees, animated
 counters and `prefers-reduced-motion` support throughout. Fully responsive
