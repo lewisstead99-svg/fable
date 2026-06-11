@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesper — Type it. Watch it exist.</title>
+  <meta name="description" content="Vesper is the generative production studio that turns one sentence into cinema-grade film, brand systems, and living interfaces.">
+  <meta name="theme-color" content="#050509">
+  <meta property="og:title" content="Vesper — Type it. Watch it exist.">
+  <meta property="og:description" content="The generative production studio. One prompt. An entire production.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%238b5cf6' d='M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- ══════════ INTRO LOADER ══════════ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg class="loader-mark" viewBox="0 0 32 32" width="44" height="44" aria-hidden="true">
+        <path fill="url(#lg)" d="M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z"/>
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/>
+        </linearGradient></defs>
+      </svg>
+      <div class="loader-word">
+        <span>V</span><span>E</span><span>S</span><span>P</span><span>E</span><span>R</span>
+      </div>
+      <div class="loader-bar"><i></i></div>
+    </div>
+  </div>
+
+  <!-- ══════════ SCROLL PROGRESS ══════════ -->
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- ══════════ CURSOR GLOW ══════════ -->
+  <div id="glow" aria-hidden="true"></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <nav id="nav" aria-label="Main">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Vesper home">
+        <svg class="brand-mark" viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
+          <path fill="url(#bg1)" d="M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z"/>
+          <defs><linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/>
+          </linearGradient></defs>
+        </svg>
+        VESPER
+      </a>
+      <ul class="nav-links" id="navMenu">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#engine">Engine</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#pricing" class="nav-ghost">Sign in</a>
+        <a href="#cta" class="btn btn-sm" data-magnetic><span>Launch Vesper</span></a>
+      </div>
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO ══════════ -->
+  <header class="hero" id="top">
+    <canvas id="stars" aria-hidden="true"></canvas>
+    <div class="orb orb-1" data-parallax="0.08" aria-hidden="true"></div>
+    <div class="orb orb-2" data-parallax="0.14" aria-hidden="true"></div>
+    <div class="orb orb-3" data-parallax="0.05" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="trail trail-1" aria-hidden="true"></div>
+    <div class="trail trail-2" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="chip hero-chip">
+          <span class="chip-dot"></span>
+          Vesper One is live — now rendering in 4K
+        </div>
+        <h1 class="hero-title">
+          <span class="line"><span class="word" style="--d:.05s">Type</span> <span class="word" style="--d:.13s">it.</span></span>
+          <span class="line"><span class="word" style="--d:.24s">Watch</span> <span class="word" style="--d:.32s">it</span> <span class="word grad-text" style="--d:.42s">exist.</span></span>
+        </h1>
+        <p class="hero-lede">
+          Vesper is the generative production studio that turns one sentence into
+          cinema-grade film, brand systems, and living interfaces — directed by you,
+          finished in minutes.
+        </p>
+        <div class="hero-cta">
+          <a href="#pricing" class="btn btn-lg" data-magnetic>
+            <span>Start creating — it's free</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#engine" class="btn btn-ghost btn-lg" data-magnetic>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            <span>Watch the film</span>
+            <em>1:32</em>
+          </a>
+        </div>
+        <div class="hero-micro">
+          <div class="avatars" aria-hidden="true">
+            <i class="av av-1">MC</i><i class="av av-2">AO</i><i class="av av-3">SL</i><i class="av av-4">JL</i>
+          </div>
+          <p><strong>280,000+</strong> creators &nbsp;·&nbsp; <span class="stars-row">★★★★★</span> 4.9 &nbsp;·&nbsp; No credit card needed</p>
+        </div>
+      </div>
+
+      <div class="hero-stage">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="studio glass" data-tilt>
+          <div class="studio-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="studio-title">vesper studio — ATLAS·07</span>
+            <span class="live-badge"><i></i>LIVE RENDER</span>
+          </div>
+          <div class="studio-prompt">
+            <svg viewBox="0 0 32 32" width="14" height="14" aria-hidden="true"><path fill="#a78bfa" d="M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z"/></svg>
+            <span id="heroType"></span><span class="caret"></span>
+          </div>
+          <div class="studio-preview">
+            <div class="nebula" aria-hidden="true">
+              <i class="neb-a"></i><i class="neb-b"></i><i class="neb-c"></i>
+              <i class="neb-star s1"></i><i class="neb-star s2"></i><i class="neb-star s3"></i>
+            </div>
+            <div class="scanline" aria-hidden="true"></div>
+            <div class="hud hud-tl">SCENE 04 — POLAR CITY</div>
+            <div class="hud hud-tr">35MM · DUSK · 24FPS</div>
+            <div class="hud-progress">
+              <div class="hud-progress-bar"><i id="renderBar"></i></div>
+              <span><b id="renderPct">0</b>% RENDERED</span>
+            </div>
+          </div>
+          <div class="studio-strip" aria-hidden="true">
+            <i class="clip c1"></i><i class="clip c2 active"><b></b></i><i class="clip c3"></i><i class="clip c4"></i><i class="clip c5"></i>
+          </div>
+        </div>
+
+        <div class="float-card fc-1 glass" aria-hidden="true">
+          <span class="fc-check">✓</span>
+          <div><b>Render complete</b><small>master_4K.mov · 12.4s</small></div>
+        </div>
+        <div class="float-card fc-2 glass" aria-hidden="true">
+          <div class="fc-bars"><i></i><i></i><i></i><i></i><i></i></div>
+          <div><b>2,481 assets</b><small>generated this session</small></div>
+        </div>
+        <div class="float-card fc-3 glass" aria-hidden="true">
+          <div class="fc-ring"><span>98</span></div>
+          <div><b>Vesper Score</b><small>cinematic fidelity</small></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#logos" class="scroll-hint" aria-label="Scroll to explore">
+      <span class="mouse"><i></i></span>
+      <span class="scroll-text">Scroll to explore</span>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- ══════════ LOGO STRIP ══════════ -->
+    <section class="logos" id="logos" aria-label="Trusted by">
+      <p class="logos-label" data-reveal>Powering the world's most ambitious studios</p>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>MONOLITH</span><span>Hyperline</span><span>NORTHWIND</span><span>Opaline</span>
+          <span>SOLARIS LABS</span><span>Octave</span><span>ARCLIGHT</span><span>Lumen&amp;Co</span>
+          <span>MONOLITH</span><span>Hyperline</span><span>NORTHWIND</span><span>Opaline</span>
+          <span>SOLARIS LABS</span><span>Octave</span><span>ARCLIGHT</span><span>Lumen&amp;Co</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ STATS ══════════ -->
+    <section class="stats container" aria-label="Vesper in numbers">
+      <div class="stat" data-reveal style="--d:0s">
+        <strong><span data-counter="12" data-suffix="M+">0</span></strong>
+        <span>scenes rendered</span>
+      </div>
+      <div class="stat" data-reveal style="--d:.08s">
+        <strong><span data-counter="280" data-suffix="K+">0</span></strong>
+        <span>active creators</span>
+      </div>
+      <div class="stat" data-reveal style="--d:.16s">
+        <strong><span data-counter="12" data-suffix="s">0</span></strong>
+        <span>median 4K render</span>
+      </div>
+      <div class="stat" data-reveal style="--d:.24s">
+        <strong><span data-counter="99.99" data-suffix="%" data-decimals="2">0</span></strong>
+        <span>render uptime</span>
+      </div>
+    </section>
+
+    <!-- ══════════ FEATURES / BENTO ══════════ -->
+    <section class="section container" id="features">
+      <div class="section-head" data-reveal>
+        <p class="kicker">The toolkit</p>
+        <h2>A studio's worth of craft,<br><span class="grad-text">in a single surface.</span></h2>
+        <p class="lede">Everything between the idea and the master file — rebuilt around one question: what if you could just say it?</p>
+      </div>
+
+      <div class="bento">
+        <article class="feature span-4" data-reveal style="--d:0s">
+          <div class="viz viz-graph" aria-hidden="true">
+            <svg viewBox="0 0 320 170" preserveAspectRatio="xMidYMid meet">
+              <line x1="60" y1="40" x2="160" y2="85"/><line x1="160" y1="85" x2="262" y2="38"/>
+              <line x1="160" y1="85" x2="92" y2="138"/><line x1="160" y1="85" x2="238" y2="132"/>
+              <line x1="60" y1="40" x2="92" y2="138"/><line x1="262" y1="38" x2="238" y2="132"/>
+              <circle class="nd n1" cx="60" cy="40" r="7"/><circle class="nd n2" cx="262" cy="38" r="7"/>
+              <circle class="nd n3" cx="160" cy="85" r="10"/><circle class="nd n4" cx="92" cy="138" r="7"/>
+              <circle class="nd n5" cx="238" cy="132" r="7"/>
+            </svg>
+            <span class="viz-tag t1">sun · golden hour</span>
+            <span class="viz-tag t2">lens · 35mm</span>
+            <span class="viz-tag t3">weather · light snow</span>
+          </div>
+          <h3>Scene Graph™</h3>
+          <p>Every frame is an object you can edit. Move the sun. Recast the lead. Change the weather with a word — nothing is baked, everything is directable.</p>
+        </article>
+
+        <article class="feature span-2" data-reveal style="--d:.08s">
+          <div class="viz viz-memory" aria-hidden="true">
+            <i class="mem-ring r1"></i><i class="mem-ring r2"></i><i class="mem-ring r3"></i>
+            <i class="mem-core"></i>
+          </div>
+          <h3>Brand Memory</h3>
+          <p>Vesper learns your taste from everything you ship — palettes, pacing, type — and never forgets it.</p>
+        </article>
+
+        <article class="feature span-2" data-reveal style="--d:0s">
+          <div class="viz viz-eq" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <h3>Hyperreal Audio</h3>
+          <p>Score, voice, and foley composed to picture in real time. Stems included, always.</p>
+        </article>
+
+        <article class="feature span-4" data-reveal style="--d:.08s">
+          <div class="viz viz-notes" aria-hidden="true">
+            <span class="note n1">“warmer”</span>
+            <span class="note n2">“slower push-in”</span>
+            <span class="note n3">“more 1975”</span>
+            <span class="note-status"><i></i>re-rendering Δ only — 2.1s</span>
+          </div>
+          <h3>Director Mode</h3>
+          <p>Give notes like you would on set — <em>warmer, slower, more 1975</em>. Vesper re-renders only what changed, so revisions take seconds, not nights.</p>
+        </article>
+
+        <article class="feature span-3" data-reveal style="--d:0s">
+          <div class="viz viz-cursors" aria-hidden="true">
+            <span class="cursor cu-1"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#22d3ee" d="M4 2l16 8-7 2-3 7z"/></svg><b>Mara</b></span>
+            <span class="cursor cu-2"><svg viewBox="0 0 24 24" width="14" height="14"><path fill="#f472b6" d="M4 2l16 8-7 2-3 7z"/></svg><b>Adé</b></span>
+            <i class="sel-box"></i>
+          </div>
+          <h3>Multiplayer Direction</h3>
+          <p>Your whole team in one scene, directing live. Comments become notes; notes become frames.</p>
+        </article>
+
+        <article class="feature span-3" data-reveal style="--d:.08s">
+          <div class="viz viz-orbit" aria-hidden="true">
+            <i class="orbit-core">✦</i>
+            <div class="orbit o1"><span style="--a:0deg">4K</span><span style="--a:120deg">9:16</span><span style="--a:240deg">WEB</span></div>
+            <div class="orbit o2"><span style="--a:60deg">KEYNOTE</span><span style="--a:240deg">PRINT</span></div>
+          </div>
+          <h3>Ship Anywhere</h3>
+          <p>One click to 4K masters, vertical cuts, web embeds, and decks — color-true on every screen.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ INTERACTIVE DEMO / ENGINE ══════════ -->
+    <section class="section engine" id="engine">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker">The engine</p>
+          <h2>Watch a sentence<br><span class="grad-text">become a deliverable.</span></h2>
+          <p class="lede">Four disciplines. One prompt bar. Pick a craft and watch Vesper work.</p>
+        </div>
+
+        <div class="demo glass" data-reveal>
+          <div class="demo-tabs" role="tablist" aria-label="Demo modes">
+            <button class="tab active" role="tab" aria-selected="true" data-tab="film" id="tab-film" aria-controls="panel-film">Film</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="identity" id="tab-identity" aria-controls="panel-identity">Identity</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="interface" id="tab-interface" aria-controls="panel-interface">Interface</button>
+            <button class="tab" role="tab" aria-selected="false" data-tab="score" id="tab-score" aria-controls="panel-score">Score</button>
+            <span class="tab-glider" aria-hidden="true"></span>
+          </div>
+
+          <div class="demo-bar">
+            <svg viewBox="0 0 32 32" width="15" height="15" aria-hidden="true"><path fill="#a78bfa" d="M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z"/></svg>
+            <span id="demoType"></span><span class="caret"></span>
+            <button class="demo-run" id="demoRun">Render ⏎</button>
+          </div>
+
+          <div class="demo-stage">
+            <div class="panel active" id="panel-film" role="tabpanel" aria-labelledby="tab-film"
+                 data-prompt="A lone diver discovers a city of light beneath polar ice — 35mm, dusk palette, slow push-in.">
+              <div class="scene-film">
+                <div class="sf-sky"></div>
+                <div class="sf-sun"></div>
+                <div class="sf-mtn m1"></div><div class="sf-mtn m2"></div><div class="sf-mtn m3"></div>
+                <div class="sf-mist"></div>
+                <div class="sf-bar top"></div><div class="sf-bar bottom"></div>
+                <div class="sf-meta"><span class="rec"><i></i>REC</span><span>TC 00:00:08:12</span><span>ƒ/1.8 · ISO 800</span></div>
+              </div>
+              <div class="demo-result"><span class="ok">✓</span> master.mov — 4K · 24fps · 1,440 frames · rendered in 11.8s</div>
+            </div>
+
+            <div class="panel" id="panel-identity" role="tabpanel" aria-labelledby="tab-identity" hidden
+                 data-prompt="A heritage skincare house from Kyoto, reborn for 2031 — quiet luxury, paper and lacquer.">
+              <div class="scene-identity">
+                <div class="id-specimen">
+                  <span class="id-eyebrow">EST. 1931 — KYOTO</span>
+                  <strong>KYORA</strong>
+                  <span class="id-sub">Aa Bb Cc — Grotesk Display · Light 300</span>
+                </div>
+                <div class="id-palette">
+                  <i style="--c:#0e0b16"><b>Ink</b></i>
+                  <i style="--c:#f5efe6"><b>Washi</b></i>
+                  <i style="--c:#c9a05c"><b>Kin</b></i>
+                  <i style="--c:#7d8c7c"><b>Moss</b></i>
+                  <i style="--c:#b14a3a"><b>Lacquer</b></i>
+                </div>
+              </div>
+              <div class="demo-result"><span class="ok">✓</span> brand-system.zip — logo suite · 5 palettes · 214 assets · 8.2s</div>
+            </div>
+
+            <div class="panel" id="panel-interface" role="tabpanel" aria-labelledby="tab-interface" hidden
+                 data-prompt="A banking app that feels like a quiet morning — soft light, zero clutter, one gesture to pay.">
+              <div class="scene-interface">
+                <div class="phone">
+                  <div class="ph-notch"></div>
+                  <div class="ph-greet">Good morning, Ava</div>
+                  <div class="ph-balance glass-2">
+                    <small>Total balance</small>
+                    <strong>$24,860<span>.55</span></strong>
+                    <svg class="ph-spark" viewBox="0 0 120 32" preserveAspectRatio="none"><path d="M0 26 L14 22 L28 24 L42 16 L56 18 L70 10 L84 13 L98 6 L120 8" fill="none"/></svg>
+                  </div>
+                  <div class="ph-actions"><i>Send</i><i>Request</i><i class="hot">Pay</i></div>
+                  <div class="ph-row"><span class="ph-ic">☕</span><div><b>Kissa Coffee</b><small>8:42 AM</small></div><em>−$6.40</em></div>
+                  <div class="ph-row"><span class="ph-ic">◍</span><div><b>Salary — Northwind</b><small>Yesterday</small></div><em class="up">+$4,200</em></div>
+                </div>
+              </div>
+              <div class="demo-result"><span class="ok">✓</span> quiet-bank.fig — 38 screens · design tokens · live prototype · 9.6s</div>
+            </div>
+
+            <div class="panel" id="panel-score" role="tabpanel" aria-labelledby="tab-score" hidden
+                 data-prompt="Score the launch film — analog warmth, 92 BPM, widescreen strings that bloom at the reveal.">
+              <div class="scene-score">
+                <div class="wave" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <div class="stems">
+                  <div class="stem"><span class="stem-dot d1"></span><b>Strings</b><small>analog warmth</small><em>−3.2 dB</em></div>
+                  <div class="stem"><span class="stem-dot d2"></span><b>Pulse</b><small>92 BPM · tape sat</small><em>−6.0 dB</em></div>
+                  <div class="stem"><span class="stem-dot d3"></span><b>Air</b><small>widescreen pad</small><em>−9.4 dB</em></div>
+                </div>
+              </div>
+              <div class="demo-result"><span class="ok">✓</span> score-final.wav — 1:32 · 6 stems · synced to picture · 6.1s</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ HOW IT WORKS ══════════ -->
+    <section class="section container" id="how">
+      <div class="section-head" data-reveal>
+        <p class="kicker">The method</p>
+        <h2>Three moves.<br><span class="grad-text">No timeline.</span></h2>
+        <p class="lede">The entire production pipeline, folded into a conversation.</p>
+      </div>
+      <div class="steps">
+        <div class="step-line" aria-hidden="true"><i></i></div>
+        <article class="step" data-reveal style="--d:0s">
+          <span class="step-num">01</span>
+          <h3>Describe</h3>
+          <p>Write what you see in your head. A logline. A vibe. A napkin sketch in words. That's the whole brief.</p>
+        </article>
+        <article class="step" data-reveal style="--d:.14s">
+          <span class="step-num">02</span>
+          <h3>Direct</h3>
+          <p>Vesper drafts in seconds. You give notes like a director — it re-renders only the difference, instantly.</p>
+        </article>
+        <article class="step" data-reveal style="--d:.28s">
+          <span class="step-num">03</span>
+          <h3>Ship</h3>
+          <p>Export masters for every screen — film, social, web, print — color-true, stem-split, and ready to publish.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ DASHBOARD / MISSION CONTROL ══════════ -->
+    <section class="section dash-section" id="studio">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker">Mission control</p>
+          <h2>Your studio,<br><span class="grad-text">at a glance.</span></h2>
+          <p class="lede">Every project, render, and review in one calm, dark room.</p>
+        </div>
+
+        <div class="dash-wrap" data-parallax="0.05">
+          <div class="dash glass" data-reveal>
+            <aside class="dash-side">
+              <div class="dash-logo">
+                <svg viewBox="0 0 32 32" width="18" height="18" aria-hidden="true"><path fill="#a78bfa" d="M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z"/></svg>
+                <b>vesper</b>
+              </div>
+              <a class="dash-nav active"><i>◈</i>Scenes</a>
+              <a class="dash-nav"><i>▤</i>Assets</a>
+              <a class="dash-nav"><i>▶</i>Renders</a>
+              <a class="dash-nav"><i>✦</i>Memory</a>
+              <a class="dash-nav"><i>◎</i>Team</a>
+              <div class="dash-user">
+                <i class="av av-1">MC</i>
+                <div><b>Mara Chen</b><small>Atelier plan</small></div>
+              </div>
+            </aside>
+            <div class="dash-main">
+              <div class="dash-head">
+                <div>
+                  <h4>Atlas — Polar City</h4>
+                  <small>Last render 2 min ago · 7 scenes in queue</small>
+                </div>
+                <div class="dash-actions">
+                  <span class="pill rendering"><i></i>Rendering</span>
+                  <span class="pill">Share</span>
+                  <span class="pill hot">Export</span>
+                </div>
+              </div>
+              <div class="dash-cards">
+                <div class="dcard">
+                  <small>Render queue</small><b>7 scenes</b>
+                  <div class="dcard-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <div class="dcard">
+                  <small>GPU lane</small><b>82%</b>
+                  <div class="dcard-meter"><i></i></div>
+                </div>
+                <div class="dcard">
+                  <small>Credits</small><b>∞ Unlimited</b>
+                  <div class="dcard-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+              <div class="dash-chart">
+                <div class="dash-chart-head"><small>Renders this week</small><b>+312%</b></div>
+                <svg viewBox="0 0 600 180" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#8b5cf6" stop-opacity=".35"/>
+                      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/>
+                    </linearGradient>
+                  </defs>
+                  <path class="chart-area" fill="url(#area)" d="M0 150 C60 140 90 120 140 118 C190 116 210 88 270 84 C330 80 350 96 410 62 C470 28 520 40 600 18 L600 180 L0 180 Z"/>
+                  <path class="chart-line" fill="none" stroke="url(#stroke)" stroke-width="3" stroke-linecap="round" d="M0 150 C60 140 90 120 140 118 C190 116 210 88 270 84 C330 80 350 96 410 62 C470 28 520 40 600 18"/>
+                  <circle class="chart-dot" cx="600" cy="18" r="5"/>
+                </svg>
+                <div class="chart-axis"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+              </div>
+              <div class="dash-table">
+                <div class="trow"><b>Polar City — Scene 04</b><span>4K · 24fps</span><em class="ok-pill">✓ Done</em><small>12.4s</small></div>
+                <div class="trow"><b>Kyora — Brand film</b><span>4K · 25fps</span><em class="run-pill"><i></i>64%</em><small>est. 6s</small></div>
+                <div class="trow"><b>Northwind — Titles</b><span>ProRes</span><em class="queue-pill">Queued</em><small>—</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ BENEFITS ══════════ -->
+    <section class="section container" id="why">
+      <div class="why-grid">
+        <div class="why-copy" data-reveal>
+          <p class="kicker">Why teams switch</p>
+          <h2>Retire<br><span class="grad-text">the pipeline.</span></h2>
+          <p class="lede">The old way needed nine subscriptions, a render farm, and a six-week calendar. Vesper needs a sentence.</p>
+          <ul class="checks">
+            <li data-reveal style="--d:0s"><i>✓</i>Replace 9 tools with one surface</li>
+            <li data-reveal style="--d:.06s"><i>✓</i>14× faster from brief to master</li>
+            <li data-reveal style="--d:.12s"><i>✓</i>4K renders in seconds, not overnight</li>
+            <li data-reveal style="--d:.18s"><i>✓</i>Reviews with notes, not meetings</li>
+            <li data-reveal style="--d:.24s"><i>✓</i>Your IP stays yours — always</li>
+            <li data-reveal style="--d:.3s"><i>✓</i>SOC 2, SSO &amp; audit trails built in</li>
+          </ul>
+        </div>
+        <div class="why-visual" data-reveal>
+          <div class="stack-card old glass">
+            <small>THE OLD STACK</small>
+            <div class="old-chips">
+              <span>NLE Suite</span><span>VFX Pro</span><span>DAW</span><span>Render Farm</span>
+              <span>Stock Library</span><span>Brand Portal</span><span>Review App</span><span>Type Foundry</span><span>Asset DAM</span>
+            </div>
+            <b class="old-cost">$2,340 / mo · 6-week cycles</b>
+          </div>
+          <div class="stack-arrow" aria-hidden="true">↓</div>
+          <div class="stack-card new glass">
+            <div class="new-row">
+              <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path fill="url(#ng)" d="M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z"/><defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg>
+              <div><b>Vesper</b><small>One engine. Zero render farm.</small></div>
+            </div>
+            <b class="new-cost">from $0 / mo · same-day masters</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ TESTIMONIALS ══════════ -->
+    <section class="section voices" id="voices">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="kicker">The word on set</p>
+          <h2>Directed by<br><span class="grad-text">people like you.</span></h2>
+        </div>
+        <div class="carousel glass" data-reveal>
+          <div class="carousel-track" id="track">
+            <figure class="quote">
+              <blockquote>“We pitched a global campaign on Monday and shipped the film Thursday. Clients think we tripled headcount. It's just Vesper.”</blockquote>
+              <figcaption><i class="av av-1">MC</i><div><b>Mara Chen</b><small>Executive Creative Director, Monolith</small></div></figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote>“The first time I typed a scene and watched it render, I laughed out loud. It's the closest thing to magic I've ever used at work.”</blockquote>
+              <figcaption><i class="av av-2">AO</i><div><b>Adé Okafor</b><small>Founder, Hyperline</small></div></figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote>“Our title sequence won the pitch before the meeting ended. Vesper paid for itself in one afternoon.”</blockquote>
+              <figcaption><i class="av av-3">SL</i><div><b>Sofia Lindqvist</b><small>Head of Film, Northwind</small></div></figcaption>
+            </figure>
+            <figure class="quote">
+              <blockquote>“I direct with sentences now. My team reviews in the morning, we ship by lunch, and nobody has opened a timeline in months.”</blockquote>
+              <figcaption><i class="av av-4">JL</i><div><b>Jules Laurent</b><small>Brand Director, Opaline</small></div></figcaption>
+            </figure>
+          </div>
+          <div class="carousel-nav">
+            <button id="prev" aria-label="Previous testimonial">←</button>
+            <div class="dots" id="dots"></div>
+            <button id="next" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PRICING ══════════ -->
+    <section class="section container" id="pricing">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Pricing</p>
+        <h2>Start free.<br><span class="grad-text">Scale to studio.</span></h2>
+        <p class="lede">Every plan includes the full engine. Pay only for speed, seats, and scale.</p>
+      </div>
+
+      <div class="billing" data-reveal>
+        <span class="bill-label monthly active">Monthly</span>
+        <button class="bill-toggle" id="billingToggle" role="switch" aria-checked="false" aria-label="Toggle annual billing"><i></i></button>
+        <span class="bill-label annual">Annual <em>save 20%</em></span>
+      </div>
+
+      <div class="plans">
+        <article class="plan glass" data-reveal style="--d:0s">
+          <h3>Spark</h3>
+          <p class="plan-tag">For first sparks</p>
+          <div class="price"><sup>$</sup><b class="amount" data-monthly="0" data-annual="0">0</b><span>/mo</span></div>
+          <ul>
+            <li><i>✓</i>30 renders / month</li>
+            <li><i>✓</i>1080p exports</li>
+            <li><i>✓</i>1 seat</li>
+            <li><i>✓</i>Community gallery</li>
+          </ul>
+          <a href="#cta" class="btn btn-ghost plan-btn" data-magnetic><span>Start free</span></a>
+        </article>
+
+        <article class="plan glass featured" data-reveal style="--d:.1s">
+          <span class="plan-badge">Most popular</span>
+          <h3>Studio</h3>
+          <p class="plan-tag">For working creatives</p>
+          <div class="price"><sup>$</sup><b class="amount" data-monthly="29" data-annual="23">29</b><span>/mo</span></div>
+          <ul>
+            <li><i>✓</i>Unlimited renders</li>
+            <li><i>✓</i>4K cinema masters</li>
+            <li><i>✓</i>Brand Memory™</li>
+            <li><i>✓</i>Director Mode</li>
+            <li><i>✓</i>5 seats included</li>
+          </ul>
+          <a href="#cta" class="btn plan-btn" data-magnetic><span>Start 14-day trial</span></a>
+        </article>
+
+        <article class="plan glass" data-reveal style="--d:.2s">
+          <h3>Atelier</h3>
+          <p class="plan-tag">For teams &amp; agencies</p>
+          <div class="price"><sup>$</sup><b class="amount" data-monthly="89" data-annual="71">89</b><span>/mo</span></div>
+          <ul>
+            <li><i>✓</i>Everything in Studio</li>
+            <li><i>✓</i>Multiplayer direction</li>
+            <li><i>✓</i>Dedicated GPU lane</li>
+            <li><i>✓</i>SSO · SOC 2 · API</li>
+            <li><i>✓</i>White-glove onboarding</li>
+          </ul>
+          <a href="#cta" class="btn btn-ghost plan-btn" data-magnetic><span>Talk to us</span></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ FAQ ══════════ -->
+    <section class="section container faq" id="faq">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Questions</p>
+        <h2>Everything else<br><span class="grad-text">you'd ask.</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item glass" data-reveal style="--d:0s">
+          <button class="faq-q" aria-expanded="false">
+            <span>Who owns what Vesper creates?</span><i class="faq-icon"></i>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>You do — fully and forever. Every render, brand system, and score made on your account ships with complete commercial rights, on every plan including Spark.</p></div></div>
+        </div>
+        <div class="faq-item glass" data-reveal style="--d:.06s">
+          <button class="faq-q" aria-expanded="false">
+            <span>How fast are renders, really?</span><i class="faq-icon"></i>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>The median 4K scene renders in 12 seconds on the shared lane, and under 5 on a dedicated Atelier lane. Director Mode notes re-render only the difference, so revisions usually land in 2–3 seconds.</p></div></div>
+        </div>
+        <div class="faq-item glass" data-reveal style="--d:.12s">
+          <button class="faq-q" aria-expanded="false">
+            <span>Will it learn my style?</span><i class="faq-icon"></i>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Brand Memory studies what you keep — palettes, pacing, typography, grade — and quietly applies it to everything new. It's private to your workspace, you can edit or wipe it anytime, and your work is never used to train shared models.</p></div></div>
+        </div>
+        <div class="faq-item glass" data-reveal style="--d:.18s">
+          <button class="faq-q" aria-expanded="false">
+            <span>Does it fit my existing tools?</span><i class="faq-icon"></i>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Vesper exports masters in every major format — ProRes, EXR sequences, stems, tokens, Figma-ready frames — and the Atelier API drops renders straight into your pipeline.</p></div></div>
+        </div>
+        <div class="faq-item glass" data-reveal style="--d:.24s">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can I cancel anytime?</span><i class="faq-icon"></i>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Anytime, in two clicks, no retention maze. Everything you've exported is yours to keep, and your Brand Memory stays archived for 12 months in case you return.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FINAL CTA ══════════ -->
+    <section class="cta" id="cta">
+      <div class="cta-orb" aria-hidden="true"></div>
+      <div class="container cta-inner" data-reveal>
+        <p class="kicker">Begin</p>
+        <h2>The next great studio is<br><span class="grad-text">one sentence away.</span></h2>
+        <p class="lede">Join 280,000 creators who stopped producing and started directing.</p>
+        <a href="#top" class="btn btn-xl" data-magnetic>
+          <span>Claim your studio — free</span>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="cta-micro">No credit card · Cancel anytime · 30 free renders on us</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <svg class="brand-mark" viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path fill="url(#fg)" d="M16 2l3.5 10.5L30 16l-10.5 3.5L16 30l-3.5-10.5L2 16l10.5-3.5z"/><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs></svg>
+          VESPER
+        </a>
+        <p>The generative production studio. Type it. Watch it exist.</p>
+        <div class="notify">
+          <input type="email" id="notifyEmail" placeholder="you@studio.com" aria-label="Email address">
+          <button class="btn btn-sm" id="notifyBtn"><span>Request access</span></button>
+        </div>
+        <p class="notify-msg" id="notifyMsg" role="status"></p>
+      </div>
+      <nav class="footer-col" aria-label="Product">
+        <b>Product</b>
+        <a href="#features">Features</a>
+        <a href="#engine">Engine</a>
+        <a href="#studio">Studio</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <b>Company</b>
+        <a href="#why">Why Vesper</a>
+        <a href="#voices">Customers</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cta">Careers</a>
+      </nav>
+      <nav class="footer-col" aria-label="Resources">
+        <b>Resources</b>
+        <a href="#engine">Showreel</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">Support</a>
+        <a href="#cta">Press kit</a>
+      </nav>
+    </div>
+    <div class="container footer-base">
+      <small>© 2026 Vesper Systems, Inc. — Rendered with one sentence.</small>
+      <span class="status"><i></i>All systems operational</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
