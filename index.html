@@ -2,653 +2,584 @@
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>HiAva — The AI employee for estate agencies</title>
-  <meta name="description" content="Say hi to Ava. The AI employee that answers every call, qualifies every lead, books valuations, runs AML and never sleeps. Smart, calm support for every busy agency.">
-  <meta name="theme-color" content="#FFFFFF">
-  <meta property="og:title" content="HiAva — The AI employee for estate agencies">
-  <meta property="og:description" content="Calls. Leads. AML. Compliance. Viewings. Admin. Handled automatically.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF585A'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fabricatr — Independent Creative Studio | Brand, Web, AI & Motion</title>
+  <meta name="description" content="Fabricatr is an independent creative studio in Sandbanks, UK — building brand identities, websites, campaigns and AI-led products for ambitious businesses.">
+  <link rel="canonical" href="https://fabricatr.com/">
+  <meta name="theme-color" content="#F2EFE6">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fabricatr.com/">
+  <meta property="og:title" content="Fabricatr — We fabricate brands people remember.">
+  <meta property="og:description" content="An independent creative studio building brand identities, websites, campaigns and AI-led products for ambitious businesses.">
+  <meta property="og:image" content="https://fabricatr.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://fabricatr.com/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js');</script>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Fabricatr",
+    "url": "https://fabricatr.com/",
+    "email": "lewis@fabricatr.com",
+    "description": "Independent creative studio building brand identities, websites, campaigns and AI-led products for ambitious businesses.",
+    "founder": { "@type": "Person", "name": "Lewis Steadman" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Sandbanks, Poole", "addressRegion": "Dorset", "addressCountry": "GB" },
+    "areaServed": ["Sandbanks", "Poole", "Bournemouth", "Dorset", "London", "United Kingdom"],
+    "knowsAbout": ["Brand identity", "Brand strategy", "Website design", "Framer development", "Property marketing", "AI product design", "Motion design"],
+    "sameAs": ["https://instagram.com/madebyfabricatr", "https://www.framer.com/@fabricatr/"]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ════════ SVG ICON SET ════════ -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
-      <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.8 11.8 2.3 2.3 4.2-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-      <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 9.5h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-      <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3.5h8l4 4V20a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 5 20V5A1.5 1.5 0 0 1 6.5 3.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12h6M9 15.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 6a2.5 2.5 0 0 1 2.5-2.5h11A2.5 2.5 0 0 1 20 6v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4H6.5A2.5 2.5 0 0 1 4 14Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
-      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m7.5 14 4-5 3 3 4.5-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-      <symbol id="i-home" viewBox="0 0 24 24"><path d="m4 11 8-7 8 7v8.5A1.5 1.5 0 0 1 18.5 21h-13A1.5 1.5 0 0 1 4 19.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 21v-6h5v6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
-      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2.5h-15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M10 21a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-      <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L9.5 22 19 10h-6.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
-      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m11.5 11.5 8-8M16 7l3 3M13.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
-      <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6.5 8h11v3.5A5.5 5.5 0 0 1 12 17a5.5 5.5 0 0 1-5.5-5.5ZM12 17v4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-      <symbol id="i-infinity" viewBox="0 0 24 24"><path d="M12 12c-2-3.5-3.5-4.5-5.5-4.5a4.5 4.5 0 0 0 0 9c2 0 3.5-1 5.5-4.5Zm0 0c2 3.5 3.5 4.5 5.5 4.5a4.5 4.5 0 0 0 0-9c-2 0-3.5 1-5.5 4.5Z" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
-      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
-    </defs>
-  </svg>
-
-  <!-- ════════ INTRO SEQUENCE ════════ -->
-  <div id="intro" role="presentation">
-    <canvas id="introCanvas" aria-hidden="true"></canvas>
-    <div class="intro-stage">
-      <p class="intro-line" id="introLine1">Estate&nbsp;Agency</p>
-      <p class="intro-line intro-line--accent" id="introLine2">Reimagined</p>
-      <div class="intro-online" id="introOnline">
-        <span class="intro-dot" aria-hidden="true"></span>
-        <span>Ava is online.</span>
-      </div>
-      <div class="intro-logo" id="introLogo" aria-hidden="true">
-        <span class="il-letter">H</span><span class="il-letter">i</span><span class="il-letter il-letter--coral">A</span><span class="il-letter il-letter--coral">v</span><span class="il-letter il-letter--coral">a</span><span class="il-pulse"></span>
-      </div>
+  <!-- ============ NAV ============ -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Fabricatr — home">
+        <span class="brand-mark">Fabricatr<sup>®</sup></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="index.html#ai">AI Studio</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn nav-cta" href="contact.html">Start a project</a>
+      </nav>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu">
+        <span>Menu</span><span class="bars" aria-hidden="true"></span>
+      </button>
     </div>
-    <button class="intro-skip" id="introSkip" type="button">Skip&nbsp;intro</button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <nav aria-label="Mobile">
+      <a href="work.html"><span class="no">01</span> Work</a>
+      <a href="services.html"><span class="no">02</span> Services</a>
+      <a href="about.html"><span class="no">03</span> About</a>
+      <a href="index.html#ai"><span class="no">04</span> AI Studio</a>
+      <a href="contact.html"><span class="no">05</span> Contact</a>
+    </nav>
+    <div class="mm-foot mono">
+      <a href="mailto:lewis@fabricatr.com">lewis@fabricatr.com</a>
+      <a href="https://wa.link/12v2dp">WhatsApp</a>
+      <a href="https://instagram.com/madebyfabricatr">Instagram</a>
+    </div>
   </div>
 
-  <!-- ════════ CHROME ════════ -->
-  <div id="cursorGlow" aria-hidden="true"></div>
-  <div id="cursorDot" aria-hidden="true"></div>
-  <div id="progressBar" aria-hidden="true"></div>
+  <main id="main">
 
-  <!-- ════════ AVA — LIVING ENTITY ════════ -->
-  <button id="avaOrb" type="button" aria-label="Ava — jump to the live demo">
-    <canvas id="avaOrbCanvas" aria-hidden="true"></canvas>
-    <span class="orb-label" id="orbLabel">Hi, I'm Ava</span>
-  </button>
-
-  <nav id="nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <a class="brand" href="#top" aria-label="HiAva home">
-        Hi<span class="brand-accent">Ava</span><span class="brand-dot" aria-hidden="true"></span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#demo">Live demo</a></li>
-        <li><a href="#features">Capabilities</a></li>
-        <li><a href="#command">Command centre</a></li>
-        <li><a href="#roi">ROI</a></li>
-      </ul>
-      <a class="btn btn--primary btn--sm" href="#finale" data-magnetic>Book a demo</a>
-    </div>
-  </nav>
-
-  <main id="top">
-
-    <!-- ════════ HERO ════════ -->
-    <header class="hero" id="hero">
-      <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-      <div class="hero-rays" aria-hidden="true"><i></i><i></i></div>
-      <canvas id="heroNet" aria-hidden="true"></canvas>
-      <div class="hero-floor" aria-hidden="true"></div>
-      <div class="hero-chips" id="heroChips" aria-hidden="true">
-        <span class="hchip" data-depth="22"><svg class="icon icon--xs"><use href="#i-shield"/></svg>AML cleared · file 412</span>
-        <span class="hchip" data-depth="34"><svg class="icon icon--xs"><use href="#i-cal"/></svg>Valuation — Thu 14:30</span>
-        <span class="hchip" data-depth="16"><svg class="icon icon--xs"><use href="#i-user"/></svg>Lead scored 87 · HOT</span>
-        <span class="hchip" data-depth="28"><svg class="icon icon--xs"><use href="#i-phone"/></svg>Answered in 0.8s</span>
-      </div>
-      <div class="hero-inner">
-        <p class="hero-eyebrow reveal">
-          <span class="pulse-dot" aria-hidden="true"></span>
-          Say hi to Ava &nbsp;·&nbsp; The AI employee for estate &amp; lettings agencies
-        </p>
-        <h1 class="hero-title" id="heroTitle">
-          <span class="ht-line"><span class="ht-word">The</span> <span class="ht-word">AI</span> <span class="ht-word">employee</span></span>
-          <span class="ht-line"><span class="ht-word">every</span> <span class="ht-word">estate</span> <span class="ht-word">agency</span></span>
-          <span class="ht-line"><span class="ht-word">wishes</span> <span class="ht-word">they</span> <span class="ht-word">hired</span> <span class="ht-word ht-word--coral">first.</span></span>
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-label="Introduction">
+      <canvas id="fabric-canvas" data-fabric data-mode="light" aria-hidden="true"></canvas>
+      <div class="container" style="position:relative">
+        <div class="hero-topline mono">
+          <span>Fabricatr® — Independent Creative Studio</span>
+          <span>FBR-26 / Live</span>
+        </div>
+        <h1>
+          <span class="line"><span>We fabricate</span></span>
+          <span class="line"><span>brands people</span></span>
+          <span class="line"><span class="em">remember.</span></span>
         </h1>
-        <p class="hero-sub reveal" data-delay="2">
-          Calls. Leads. AML. Compliance. Viewings. Admin.<br>
-          <strong>Handled automatically.</strong>
-        </p>
-        <div class="hero-ctas reveal" data-delay="3">
-          <a class="btn btn--primary btn--lg" href="#finale" data-magnetic>Book a demo</a>
-          <a class="btn btn--ghost btn--lg" href="#demo" id="watchAvaBtn" data-magnetic>
-            <svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg>
-            Watch Ava work
+        <div class="hero-foot">
+          <div>
+            <p class="lead">An independent creative studio building brand identities, websites, campaigns and AI-led products for ambitious businesses.</p>
+            <div class="hero-ctas">
+              <a class="btn" href="work.html">View selected work <span class="arrow">→</span></a>
+              <a class="btn btn--ghost" href="contact.html">Start a project</a>
+            </div>
+          </div>
+          <div class="hero-meta mono">
+            <span>Sandbanks / London / Working everywhere</span>
+            <span>Brand — Digital — AI — Content — Motion</span>
+            <span class="sig">✱ Attention is the scarcest material on earth</span>
+          </div>
+        </div>
+      </div>
+      <span class="scroll-cue mono" aria-hidden="true">Scroll to explore</span>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Brand</span><span class="star">✱</span>
+        <span>Digital</span><span class="star">✱</span>
+        <span>AI</span><span class="star">✱</span>
+        <span>Content</span><span class="star">✱</span>
+        <span>Motion</span><span class="star">✱</span>
+        <span>Fabricatr®</span><span class="star">✱</span>
+      </div>
+    </div>
+
+    <!-- ============ SELECTED WORK ============ -->
+    <section class="section" id="work" aria-labelledby="work-h">
+      <div class="container">
+        <div class="kicker mono">
+          <span><span class="idx">SCN 02</span> — Selected work</span>
+          <span>2024 — 2026</span>
+        </div>
+        <h2 class="display reveal" id="work-h">Work that refuses<br><span class="em">to be wallpaper.</span></h2>
+        <p class="lead reveal" data-delay="1" style="margin-top:24px;margin-bottom:clamp(40px,6vw,88px)">Brands, websites and products fabricated for people who’d rather be remembered than merely seen.</p>
+
+        <div class="work-grid">
+          <a class="work-card span-7 reveal" href="projects/taylored.html">
+            <div class="frame">
+              <img src="https://www.fabricatr.com/assets/taylored-card.webp" alt="Taylored Barbering takeaway coffee cups with the new identity, photographed in the wild" loading="lazy">
+              <div class="ph" aria-hidden="true"><span>Taylored</span></div>
+              <span class="fig mono">Fig. 01 — Identity in the wild</span>
+            </div>
+            <div class="cap">
+              <div class="row1"><span class="name">Taylored <span class="go">→</span></span><span class="meta mono">2026</span></div>
+              <span class="one-liner">The new standard for cuts, shaves and culture.</span>
+              <span class="meta mono">Grooming — Brand — Web — Shopfront</span>
+            </div>
+          </a>
+
+          <a class="work-card span-5 push-down reveal" data-delay="1" href="projects/key-drummond.html">
+            <div class="frame">
+              <img src="https://www.fabricatr.com/assets/kd-card.webp" alt="Key Drummond Spring Edition property brochures, printed" loading="lazy">
+              <div class="ph" aria-hidden="true"><span>Key Drummond</span></div>
+              <span class="fig mono">Fig. 02 — Spring edition, in print</span>
+            </div>
+            <div class="cap">
+              <div class="row1"><span class="name">Key Drummond <span class="go">→</span></span><span class="meta mono">2025–26</span></div>
+              <span class="one-liner">Prime coastal property, presented properly.</span>
+              <span class="meta mono">Estate agency — Marketing — Campaigns</span>
+            </div>
+          </a>
+
+          <a class="work-card span-12 reveal" href="projects/tandem.html">
+            <div class="frame">
+              <img src="https://www.fabricatr.com/assets/tandem-card.webp" alt="Tandem brand guidelines board — identity system for an AI automation studio" loading="lazy">
+              <div class="ph" aria-hidden="true"><span>Tandem</span></div>
+              <span class="fig mono">Fig. 03 — Brand system</span>
+            </div>
+            <div class="cap">
+              <div class="row1"><span class="name">Tandem <span class="go">→</span></span><span class="meta mono">2026</span></div>
+              <span class="one-liner">AI that works alongside you.</span>
+              <span class="meta mono">AI studio — Identity — Web</span>
+            </div>
+          </a>
+
+          <a class="work-card span-5 reveal" href="projects/reshot.html">
+            <div class="frame">
+              <img src="https://www.fabricatr.com/assets/reshot-card.webp" alt="ReShot mascot character system for AI property photo enhancement" loading="lazy">
+              <div class="ph" aria-hidden="true"><span>ReShot</span></div>
+              <span class="fig mono">Fig. 04 — Meet the mascot</span>
+            </div>
+            <div class="cap">
+              <div class="row1"><span class="name">ReShot <span class="go">→</span></span><span class="meta mono">2026</span></div>
+              <span class="one-liner">You snap it. We fix it.</span>
+              <span class="meta mono">Proptech — Brand — Product</span>
+            </div>
+          </a>
+
+          <a class="work-card span-7 push-down reveal" data-delay="1" href="projects/drift.html">
+            <div class="frame">
+              <img src="https://www.fabricatr.com/assets/drift-card.webp" alt="Drift Collective business cards — brand identity for luxury coastal stays" loading="lazy">
+              <div class="ph" aria-hidden="true"><span>Drift</span></div>
+              <span class="fig mono">Fig. 05 — Print, properly</span>
+            </div>
+            <div class="cap">
+              <div class="row1"><span class="name">Drift Collective <span class="go">→</span></span><span class="meta mono">2025</span></div>
+              <span class="one-liner">Coastal living, curated properly.</span>
+              <span class="meta mono">Luxury stays — Brand — Web</span>
+            </div>
+          </a>
+
+          <a class="work-card span-6 reveal" href="projects/hs-homebound.html">
+            <div class="frame">
+              <img src="https://www.fabricatr.com/assets/homebound-card.webp" alt="H+S Homebound site hoarding — The Treehouse, Western Road" loading="lazy">
+              <div class="ph" aria-hidden="true"><span>H+S Homebound</span></div>
+              <span class="fig mono">Fig. 06 — On site</span>
+            </div>
+            <div class="cap">
+              <div class="row1"><span class="name">H+S Homebound <span class="go">→</span></span><span class="meta mono">2025</span></div>
+              <span class="one-liner">Thoughtfully crafted, bespoke homes.</span>
+              <span class="meta mono">Property — Brand — Web</span>
+            </div>
+          </a>
+
+          <a class="work-card span-6 push-down reveal" data-delay="1" href="projects/davidson-estates.html">
+            <div class="frame">
+              <img src="https://www.fabricatr.com/assets/davidson-card.webp" alt="Davidson Estates sales and lettings website on screen" loading="lazy">
+              <div class="ph" aria-hidden="true"><span>Davidson Estates</span></div>
+              <span class="fig mono">Fig. 07 — Sales &amp; lettings</span>
+            </div>
+            <div class="cap">
+              <div class="row1"><span class="name">Davidson Estates <span class="go">→</span></span><span class="meta mono">2026</span></div>
+              <span class="one-liner">Sales &amp; lettings, properly presented.</span>
+              <span class="meta mono">Estate agency — Brand — Web</span>
+            </div>
           </a>
         </div>
 
-        <!-- HERO CONSOLE — Ava live -->
-        <div class="hero-console reveal" data-delay="4" id="heroConsole">
-          <div class="console-bar">
-            <span class="cb-dot"></span><span class="cb-dot"></span><span class="cb-dot"></span>
-            <span class="cb-title">AVA · OPERATING LIVE</span>
-            <span class="cb-status"><span class="pulse-dot" aria-hidden="true"></span>Online · 0.8s response</span>
-          </div>
-          <div class="console-grid">
-            <div class="console-feed">
-              <p class="pane-label">Live activity</p>
-              <ul id="heroFeed" aria-live="polite"></ul>
-            </div>
-            <div class="console-side">
-              <div class="console-stat">
-                <p class="pane-label">Calls answered today</p>
-                <p class="console-num"><span id="heroCalls" class="num">147</span></p>
-                <p class="console-sub coral-text">0 missed</p>
-              </div>
-              <div class="console-stat">
-                <p class="pane-label">Booked while you read this</p>
-                <ul class="console-booked" id="heroBooked"></ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-scrollhint reveal" data-delay="5" aria-hidden="true">
-        <span>Scroll</span>
-        <span class="hint-line"><i></i></span>
-      </div>
-    </header>
-
-    <!-- ════════ MARQUEE ════════ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track" id="marqueeTrack">
-        <span>AI call answering</span><i></i><span>Lead qualification</span><i></i><span>AML automation</span><i></i><span>Compliance monitoring</span><i></i><span>Viewing coordination</span><i></i><span>Vendor updates</span><i></i><span>Landlord communication</span><i></i><span>Applicant management</span><i></i><span>CRM integration</span><i></i><span>24/7 availability</span><i></i>
-      </div>
-    </div>
-
-    <!-- ════════ INTERACTIVE DEMO ════════ -->
-    <section class="section" id="demo">
-      <div class="container">
-        <p class="section-eyebrow reveal">Interactive · Press anything</p>
-        <h2 class="section-title reveal">Watch Ava run<br>an agency<span class="coral-text">.</span></h2>
-        <p class="section-sub reveal" data-delay="1">Throw real agency chaos at her. Every button fires a live scenario — watch decisions ripple across calls, diary, compliance and CRM in real time.</p>
-      </div>
-
-      <div class="container demo-layout reveal" data-delay="2">
-        <div class="demo-triggers" role="group" aria-label="Demo scenarios">
-          <button class="trigger" data-scenario="seller" type="button">
-            <svg class="icon" aria-hidden="true"><use href="#i-home"/></svg>
-            <span class="trigger-name">Incoming seller lead</span>
-            <span class="trigger-sub">Vendor wants a valuation</span>
-          </button>
-          <button class="trigger" data-scenario="landlord" type="button">
-            <svg class="icon" aria-hidden="true"><use href="#i-key"/></svg>
-            <span class="trigger-name">Landlord enquiry</span>
-            <span class="trigger-sub">New instruction to let</span>
-          </button>
-          <button class="trigger" data-scenario="aml" type="button">
-            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
-            <span class="trigger-name">AML check</span>
-            <span class="trigger-sub">Compliance, start to finish</span>
-          </button>
-          <button class="trigger" data-scenario="viewing" type="button">
-            <svg class="icon" aria-hidden="true"><use href="#i-cal"/></svg>
-            <span class="trigger-name">Viewing request</span>
-            <span class="trigger-sub">Applicant on the line</span>
-          </button>
-          <button class="trigger" data-scenario="vendor" type="button">
-            <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
-            <span class="trigger-name">Vendor update</span>
-            <span class="trigger-sub">Weekly report, written &amp; sent</span>
-          </button>
-          <button class="trigger" data-scenario="missed" type="button">
-            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
-            <span class="trigger-name">Missed call</span>
-            <span class="trigger-sub">6:48pm, everyone's gone home</span>
-          </button>
-          <button class="trigger" data-scenario="valuation" type="button">
-            <svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>
-            <span class="trigger-name">Valuation booking</span>
-            <span class="trigger-sub">Portal lead, 8-second reply</span>
-          </button>
-        </div>
-
-        <div class="demo-stage" id="demoStage">
-          <div class="console-bar">
-            <span class="cb-dot"></span><span class="cb-dot"></span><span class="cb-dot"></span>
-            <span class="cb-title">AVA OS · AGENCY VIEW</span>
-            <span class="cb-status" id="demoStatus"><span class="pulse-dot" aria-hidden="true"></span>Idle — waiting for chaos</span>
-          </div>
-          <div class="stage-grid">
-            <div class="stage-pane stage-call">
-              <p class="pane-label"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-mic"/></svg> Live line</p>
-              <div class="incoming" id="incomingBanner" aria-hidden="true">
-                <span class="incoming-rings"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><i></i><i></i></span>
-                <span>Incoming call…</span>
-              </div>
-              <div class="callwave" id="callWave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <ul class="transcript" id="stageTranscript" aria-live="polite"></ul>
-            </div>
-            <div class="stage-pane stage-actions">
-              <p class="pane-label"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-bolt"/></svg> Ava's decisions</p>
-              <div class="cognition" id="cognition" aria-hidden="true">
-                <canvas id="cogCanvas"></canvas>
-                <span class="cog-text" id="cogText">Cognition idle</span>
-              </div>
-              <ul class="actions" id="stageActions" aria-live="polite"></ul>
-            </div>
-            <div class="stage-pane stage-state">
-              <p class="pane-label"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-chart"/></svg> Agency state</p>
-              <div class="state-kpis">
-                <div class="skpi"><span class="num" id="kLeads">12</span><span>Leads<br>qualified</span></div>
-                <div class="skpi"><span class="num" id="kVals">4</span><span>Valuations<br>booked</span></div>
-                <div class="skpi"><span class="num" id="kViews">9</span><span>Viewings<br>set</span></div>
-                <div class="skpi"><span class="num" id="kAml">6</span><span>AML<br>cleared</span></div>
-              </div>
-              <p class="pane-label pane-label--gap">Diary</p>
-              <ul class="diary" id="stageDiary">
-                <li><span>09:30</span><em>Valuation — 22 Birch Lane</em></li>
-                <li><span>11:15</span><em>Viewing — Marlow Court</em></li>
-              </ul>
-              <p class="pane-label pane-label--gap">CRM — latest</p>
-              <ul class="crm" id="stageCrm">
-                <li><span class="crm-tag">HOT</span><em>J. Patel — seller, Didsbury</em></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stage-toasts" id="stageToasts" aria-live="polite"></div>
+        <div style="margin-top:clamp(48px,6vw,80px)">
+          <a class="btn btn--ghost" href="work.html">All 11 case files <span class="arrow">→</span></a>
         </div>
       </div>
     </section>
 
-    <!-- ════════ SCROLL STORY ════════ -->
-    <section class="story" id="story" aria-label="A day at an agency, before and after Ava">
-      <div class="story-track" id="storyTrack">
-        <div class="story-sticky">
-          <div class="story-stage" id="storyStage">
-            <div class="story-meter">
-              <span class="pane-label" id="meterLabel">Office load</span>
-              <div class="meter-rail"><i id="meterFill"></i></div>
-              <span class="meter-read num" id="meterRead">0%</span>
-            </div>
-            <div class="story-phones" id="storyPhones" aria-hidden="true"></div>
-            <div class="story-flash" id="storyFlash" aria-hidden="true"></div>
-            <div class="story-board" id="storyBoard"></div>
-            <div class="story-ava" id="storyAva" aria-hidden="true">
-              <span class="sa-ring"></span><span class="sa-ring sa-ring--2"></span>
-              <span class="sa-core">Ava</span>
-            </div>
-            <div class="story-calm" id="storyCalm">
-              <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
-              <span>All handled. <em id="calmCount">0 tasks</em> cleared by Ava.</span>
-            </div>
+    <!-- ============ POSITIONING ============ -->
+    <section class="section statement" aria-labelledby="pos-h">
+      <div class="container">
+        <div class="kicker mono">
+          <span><span class="idx">SCN 03</span> — Position</span>
+          <span>Why it matters</span>
+        </div>
+        <h2 id="pos-h" class="reveal">Good design is noticed.<br><span class="em">Great design changes what happens next.</span></h2>
+        <p class="lead reveal" data-delay="1">We don’t deliver decoration. Strategy, identity, digital and content are fabricated as one system — so every touchpoint pulls in the same direction, and the work earns attention instead of renting it.</p>
+      </div>
+    </section>
+
+    <!-- ============ CAPABILITIES ============ -->
+    <section class="section" id="capabilities" aria-labelledby="caps-h">
+      <div class="container">
+        <div class="kicker mono">
+          <span><span class="idx">SCN 04</span> — Capabilities</span>
+          <span>Five departments, one obsession</span>
+        </div>
+        <h2 class="display reveal" id="caps-h" style="margin-bottom:clamp(32px,5vw,64px)">Five ways to be<br><span class="em">unforgettable.</span></h2>
+
+        <div class="caps">
+          <div class="cap-item">
+            <button class="cap-head" aria-expanded="false">
+              <span class="no">01</span>
+              <span class="ttl">Brand</span>
+              <span class="pm" aria-hidden="true">+</span>
+            </button>
+            <div class="cap-body"><div>
+              <div class="cap-body-inner">
+                <span></span>
+                <div class="desc">Identities engineered to be remembered — strategy, naming, identity systems and the rules that keep them coherent at every size, on every surface. <span class="em">Timeless beats trendy.</span>
+                  <p class="mono cap-proof">In the work — <a class="tlink" href="projects/taylored.html">Taylored</a>, <a class="tlink" href="projects/drift.html">Drift Collective</a></p>
+                </div>
+                <div class="cap-tags">
+                  <span class="mono">Strategy</span><span class="mono">Naming</span><span class="mono">Identity</span><span class="mono">Systems</span><span class="mono">Guidelines</span>
+                </div>
+              </div>
+            </div></div>
           </div>
-          <div class="story-captions">
-            <p class="story-cap" data-cap="0"><strong>9:02am, Tuesday.</strong><br>A busy high-street agency. Watch what happens.</p>
-            <p class="story-cap" data-cap="1">Eleven calls in the queue. Four AML chases overdue. Two valuations nobody has booked.</p>
-            <p class="story-cap" data-cap="2">Every missed call is a vendor calling the agency next door.</p>
-            <p class="story-cap" data-cap="3"><strong>Then Ava clocks in.</strong><br>She never clocks out.</p>
-            <p class="story-cap" data-cap="4">Calls answered. Leads qualified. AML completed. Diary full.</p>
-            <p class="story-cap" data-cap="5"><strong>Calm.</strong><br>Your team sells houses. Ava does the rest.</p>
+
+          <div class="cap-item">
+            <button class="cap-head" aria-expanded="false">
+              <span class="no">02</span>
+              <span class="ttl">Digital</span>
+              <span class="pm" aria-hidden="true">+</span>
+            </button>
+            <div class="cap-body"><div>
+              <div class="cap-body-inner">
+                <span></span>
+                <div class="desc">Websites that behave like <span class="em">places, not pages</span> — designed and built by the same hands, from first wireframe to last easing curve. Framer development, e-commerce and creative build.
+                  <p class="mono cap-proof">In the work — <a class="tlink" href="projects/davidson-estates.html">Davidson Estates</a>, <a class="tlink" href="projects/123-refurbs.html">123 Refurbs</a></p>
+                </div>
+                <div class="cap-tags">
+                  <span class="mono">Websites</span><span class="mono">Framer</span><span class="mono">E-commerce</span><span class="mono">Interfaces</span><span class="mono">Creative dev</span>
+                </div>
+              </div>
+            </div></div>
+          </div>
+
+          <div class="cap-item">
+            <button class="cap-head" aria-expanded="false">
+              <span class="no">03</span>
+              <span class="ttl">AI</span>
+              <span class="pm" aria-hidden="true">+</span>
+            </button>
+            <div class="cap-body"><div>
+              <div class="cap-body-inner">
+                <span></span>
+                <div class="desc">Products where intelligence feels like <span class="em">intuition</span> — AI interfaces, automation concepts, prototypes and digital tools that pull their weight from day one.
+                  <p class="mono cap-proof">In the work — <a class="tlink" href="projects/tandem.html">Tandem</a>, <a class="tlink" href="projects/reshot.html">ReShot</a></p>
+                </div>
+                <div class="cap-tags">
+                  <span class="mono">Product design</span><span class="mono">Interfaces</span><span class="mono">Automation</span><span class="mono">Prototyping</span><span class="mono">R&amp;D</span>
+                </div>
+              </div>
+            </div></div>
+          </div>
+
+          <div class="cap-item">
+            <button class="cap-head" aria-expanded="false">
+              <span class="no">04</span>
+              <span class="ttl">Content</span>
+              <span class="pm" aria-hidden="true">+</span>
+            </button>
+            <div class="cap-body"><div>
+              <div class="cap-body-inner">
+                <span></span>
+                <div class="desc">Campaigns with <span class="em">pull</span> — property marketing, social content systems, photography direction and editorial design that keep a brand consistent long after launch.
+                  <p class="mono cap-proof">In the work — <a class="tlink" href="projects/key-drummond.html">Key Drummond</a>, <a class="tlink" href="projects/ankers-rawlings.html">Ankers + Rawlings</a></p>
+                </div>
+                <div class="cap-tags">
+                  <span class="mono">Campaigns</span><span class="mono">Property marketing</span><span class="mono">Social systems</span><span class="mono">Photo direction</span><span class="mono">Editorial</span>
+                </div>
+              </div>
+            </div></div>
+          </div>
+
+          <div class="cap-item">
+            <button class="cap-head" aria-expanded="false">
+              <span class="no">05</span>
+              <span class="ttl">Motion</span>
+              <span class="pm" aria-hidden="true">+</span>
+            </button>
+            <div class="cap-body"><div>
+              <div class="cap-body-inner">
+                <span></span>
+                <div class="desc">Interfaces with a pulse. Interaction design, animation, 3D and transitions — every easing curve <span class="em">on purpose.</span>
+                  <p class="mono cap-proof">In the work — <a class="tlink" href="projects/tandem.html">Tandem</a>, <a class="tlink" href="projects/reshot.html">ReShot</a></p>
+                </div>
+                <div class="cap-tags">
+                  <span class="mono">Interaction</span><span class="mono">Animation</span><span class="mono">3D</span><span class="mono">Transitions</span><span class="mono">Visual systems</span>
+                </div>
+              </div>
+            </div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ FEATURES ════════ -->
-    <section class="section" id="features">
+    <!-- ============ COMMERCIAL VALUE ============ -->
+    <section class="section dark" aria-labelledby="value-h">
       <div class="container">
-        <p class="section-eyebrow reveal">Capabilities</p>
-        <h2 class="section-title reveal">One employee.<br>Ten departments<span class="coral-text">.</span></h2>
-        <p class="section-sub reveal" data-delay="1">Hover anything. Every card is a job your team stops doing the day Ava starts.</p>
-
-        <div class="feature-grid">
-          <article class="feature-card reveal tilt" data-delay="0">
-            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
-            <h3>AI call answering</h3>
-            <p>Every call answered in under a second, in a voice your callers genuinely warm to. No queues. No voicemail. Ever.</p>
-            <p class="feature-stat"><span class="num" data-count="100" data-suffix="%">0</span><em>of calls answered</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="1">
-            <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
-            <h3>Lead qualification</h3>
-            <p>Motive, timeline, position, budget — Ava scores every enquiry and routes hot vendors straight to your best valuer.</p>
-            <p class="feature-stat"><span class="num" data-count="3" data-suffix="×">0</span><em>more leads qualified</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="2">
-            <svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>
-            <h3>AML automation</h3>
-            <p>ID requested, verified, PEP &amp; sanctions screened, file assembled. Compliance that completes itself overnight.</p>
-            <p class="feature-stat"><span class="num" data-count="98" data-suffix="%">0</span><em>files complete on time</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="3">
-            <svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg>
-            <h3>Compliance monitoring</h3>
-            <p>EPCs, gas safety, EICRs, right-to-rent — Ava watches every expiry date and chases the documents before you must.</p>
-            <p class="feature-stat"><span class="num" data-count="0">0</span><em>deadlines missed</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="4">
-            <svg class="icon" aria-hidden="true"><use href="#i-cal"/></svg>
-            <h3>Viewing coordination</h3>
-            <p>Applicants qualified, slots offered, confirmations sent, reminders chased. Your diary fills while you're out on appraisals.</p>
-            <p class="feature-stat"><span class="num" data-count="41" data-suffix="%">0</span><em>fewer no-shows</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="5">
-            <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
-            <h3>Vendor updates</h3>
-            <p>Weekly performance reports written, personalised and sent. Vendors who feel informed don't switch agents.</p>
-            <p class="feature-stat"><span class="num" data-count="100" data-suffix="%">0</span><em>vendors updated weekly</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="6">
-            <svg class="icon" aria-hidden="true"><use href="#i-key"/></svg>
-            <h3>Landlord communication</h3>
-            <p>Rent queries, maintenance triage, renewal conversations — handled calmly at any hour, escalated only when it matters.</p>
-            <p class="feature-stat"><span class="num" data-count="24" data-suffix="/7">0</span><em>landlord cover</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="7">
-            <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
-            <h3>Applicant management</h3>
-            <p>Every portal enquiry answered in seconds, matched to stock, and nurtured until they view, offer or buy.</p>
-            <p class="feature-stat"><span class="num" data-count="8" data-suffix="s">0</span><em>average response</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="8">
-            <svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg>
-            <h3>CRM integration</h3>
-            <p>Reapit, Alto, Street, Rex — Ava writes perfect notes into the CRM you already run. No new system to learn.</p>
-            <p class="feature-stat"><span class="num" data-count="0">0</span><em>data entry, ever</em></p>
-          </article>
-          <article class="feature-card reveal tilt" data-delay="9">
-            <svg class="icon" aria-hidden="true"><use href="#i-infinity"/></svg>
-            <h3>24/7 availability</h3>
-            <p>Evenings, weekends, bank holidays, 3am. The market doesn't keep office hours — now neither do you.</p>
-            <p class="feature-stat"><span class="num" data-count="365" data-suffix=" days">0</span><em>a year, no sick days</em></p>
-          </article>
+        <div class="kicker mono">
+          <span><span class="idx">SCN 05</span> — Why Fabricatr</span>
+          <span>The honest maths</span>
+        </div>
+        <h2 class="display reveal" id="value-h" style="margin-bottom:clamp(32px,5vw,72px)">One studio.<br>One visual direction.<br><span class="em">No disconnected suppliers.</span></h2>
+        <div class="value-grid">
+          <div class="value-cell reveal">
+            <span class="no mono">A</span>
+            <h3>Strategy and execution, one roof</h3>
+            <p>The people who set the direction are the people who build it. Nothing gets lost in a handover, because there isn’t one.</p>
+          </div>
+          <div class="value-cell reveal" data-delay="1">
+            <span class="no mono">B</span>
+            <h3>Senior creative on everything</h3>
+            <p>You work directly with the founder, not an account layer. Decisions happen in days, not steering meetings.</p>
+          </div>
+          <div class="value-cell reveal" data-delay="2">
+            <span class="no mono">C</span>
+            <h3>Brand and digital, considered together</h3>
+            <p>Identity, website and content are designed as one system — so the brand looks like itself everywhere it shows up.</p>
+          </div>
+          <div class="value-cell reveal">
+            <span class="no mono">D</span>
+            <h3>Built around commercial outcomes</h3>
+            <p>Every project starts with what the business needs to happen next — enquiries, bookings, sales — and is designed backwards from there.</p>
+          </div>
+          <div class="value-cell reveal" data-delay="1">
+            <span class="no mono">E</span>
+            <h3>Faster than an agency, deeper than a freelancer</h3>
+            <p>Small by design, with a network of trusted specialists when a project needs more hands.</p>
+          </div>
+          <div class="value-cell reveal" data-delay="2">
+            <span class="no mono">F</span>
+            <h3>Support after launch</h3>
+            <p>Campaigns, content systems and ongoing creative support — so the standard set at launch is the standard a year later.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ COMMAND CENTRE ════════ -->
-    <section class="section section--tint" id="command">
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="process" aria-labelledby="proc-h">
       <div class="container">
-        <p class="section-eyebrow reveal">Mission control</p>
-        <h2 class="section-title reveal">Your agency,<br>live<span class="coral-text">.</span></h2>
-        <p class="section-sub reveal" data-delay="1">This is the command centre every HiAva agency wakes up to. The numbers below are moving because Ava is working right now.</p>
+        <div class="kicker mono">
+          <span><span class="idx">SCN 06</span> — Process</span>
+          <span>Four stages, no bloat</span>
+        </div>
+        <h2 class="display reveal" id="proc-h" style="margin-bottom:clamp(40px,6vw,88px)">From loose threads<br><span class="em">to one system.</span></h2>
+        <div class="process-grid">
+          <div class="step">
+            <span class="node" aria-hidden="true"></span>
+            <span class="no mono">01 — Discover</span>
+            <h3>Discover</h3>
+            <p>The company, the audience, the market and the commercial objective. No assumptions, no shortcuts.</p>
+          </div>
+          <div class="step">
+            <span class="node" aria-hidden="true"></span>
+            <span class="no mono">02 — Define</span>
+            <h3>Define</h3>
+            <p>Positioning, creative direction and the strategic foundation everything else hangs on.</p>
+          </div>
+          <div class="step">
+            <span class="node" aria-hidden="true"></span>
+            <span class="no mono">03 — Fabricate</span>
+            <h3>Fabricate</h3>
+            <p>Identity, digital experience and the supporting creative system — designed and built as one.</p>
+          </div>
+          <div class="step">
+            <span class="node" aria-hidden="true"></span>
+            <span class="no mono">04 — Deploy</span>
+            <h3>Deploy</h3>
+            <p>Launch, test, refine. Final assets handed over properly — or ongoing support if you want us to stay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="command-grid">
-          <div class="widget reveal tilt" data-delay="0">
-            <p class="pane-label">Calls answered · today</p>
-            <p class="widget-num"><span class="num" id="ccCalls">231</span></p>
-            <p class="widget-sub"><span class="coral-text">0 missed</span> · avg answer 0.8s</p>
-          </div>
-          <div class="widget reveal tilt" data-delay="1">
-            <p class="pane-label">Leads qualified · this week</p>
-            <p class="widget-num"><span class="num" id="ccLeads">86</span></p>
-            <p class="widget-sub">38 hot · routed to valuers</p>
-          </div>
-          <div class="widget reveal tilt" data-delay="2">
-            <p class="pane-label">Revenue influenced · this month</p>
-            <p class="widget-num"><span class="num" id="ccRevenue">£48,200</span></p>
-            <p class="widget-sub">From recovered &amp; out-of-hours leads</p>
-          </div>
-          <div class="widget widget--wide reveal" data-delay="3">
-            <p class="pane-label">Valuations booked · this week</p>
-            <div class="weekbars" id="weekBars">
-              <div class="wb"><i style="--h:42%"></i><span>Mon</span></div>
-              <div class="wb"><i style="--h:58%"></i><span>Tue</span></div>
-              <div class="wb"><i style="--h:36%"></i><span>Wed</span></div>
-              <div class="wb"><i style="--h:74%"></i><span>Thu</span></div>
-              <div class="wb"><i style="--h:62%"></i><span>Fri</span></div>
-              <div class="wb"><i style="--h:88%"></i><span>Sat</span></div>
-              <div class="wb wb--live"><i style="--h:51%"></i><span>Sun</span></div>
-            </div>
-          </div>
-          <div class="widget reveal tilt" data-delay="4">
-            <p class="pane-label">AML completion</p>
-            <div class="ring-wrap">
-              <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
-                <circle class="ring-rail" cx="60" cy="60" r="52"/>
-                <circle class="ring-fill" id="amlRing" cx="60" cy="60" r="52"/>
-              </svg>
-              <p class="ring-num"><span class="num" id="amlPct" data-count="98" data-suffix="%">0</span></p>
-            </div>
-            <p class="widget-sub">Files complete &amp; audit-ready</p>
-          </div>
-          <div class="widget widget--feed reveal" data-delay="5">
-            <p class="pane-label">Ava · live decision stream</p>
-            <ul id="ccFeed" aria-live="off"></ul>
-          </div>
-          <div class="widget reveal tilt" data-delay="6">
-            <p class="pane-label">Agency health score</p>
-            <div class="ring-wrap">
-              <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
-                <circle class="ring-rail" cx="60" cy="60" r="52"/>
-                <circle class="ring-fill ring-fill--health" id="healthRing" cx="60" cy="60" r="52"/>
-              </svg>
-              <p class="ring-num"><span class="num" id="healthPct">0</span></p>
-            </div>
-            <p class="widget-sub" id="healthLabel">Calculating…</p>
-          </div>
-          <div class="widget reveal tilt" data-delay="7">
-            <p class="pane-label">Call queue · live</p>
-            <ul class="queue" id="callQueue"></ul>
-            <p class="widget-sub"><span class="coral-text">0s</span> average wait — Ava answers instantly</p>
-          </div>
-          <div class="widget reveal tilt" data-delay="8">
-            <p class="pane-label">Lead scoring · last 4 enquiries</p>
-            <ul class="scores" id="leadScores">
-              <li><span>S. Okafor</span><i style="--s:87%"></i><em class="num">87</em></li>
-              <li><span>D. Kaur</span><i style="--s:74%"></i><em class="num">74</em></li>
-              <li><span>L. Chen</span><i style="--s:91%"></i><em class="num">91</em></li>
-              <li><span>P. O'Shea</span><i style="--s:63%"></i><em class="num">63</em></li>
+    <!-- ============ CREDIBILITY ============ -->
+    <section class="section section--tight" aria-labelledby="cred-h" style="background:var(--bone-2)">
+      <div class="container" style="padding-block:clamp(40px,5vw,72px)">
+        <div class="kicker mono">
+          <span><span class="idx">SCN 07</span> — The index</span>
+          <span>Real clients, real launches</span>
+        </div>
+        <div class="cred-cols">
+          <div>
+            <h2 class="display reveal" id="cred-h" style="font-size:clamp(1.8rem,3.6vw,3rem)">Eleven case files.<br><span class="em">Zero wallpaper.</span></h2>
+            <ul class="fact-list" style="margin-top:32px">
+              <li class="reveal"><strong>Founder-led on every project</strong><span class="muted">Senior creative from kickoff to launch — no juniors learning on your budget.</span></li>
+              <li class="reveal" data-delay="1"><strong>Property to proptech to AI</strong><span class="muted">Estate agency, development, hospitality, grooming, e-commerce and AI products.</span></li>
+              <li class="reveal" data-delay="2"><strong>Judge us by the work</strong><span class="muted">No inflated counters, no borrowed logos. Open any case file.</span></li>
             </ul>
           </div>
-          <div class="widget reveal tilt" data-delay="9">
-            <p class="pane-label">CRM sync</p>
-            <div class="sync">
-              <span class="sync-spin" aria-hidden="true"><svg class="icon"><use href="#i-infinity"/></svg></span>
-              <div>
-                <p class="sync-state">Reapit · connected</p>
-                <p class="widget-sub">Last write <span class="num" id="syncAgo">2</span>s ago · 0 conflicts</p>
-              </div>
-            </div>
-            <ul class="sync-log" id="syncLog"></ul>
+          <div class="client-index reveal" data-delay="1">
+            <div class="client-row"><span class="cn">Taylored Barbering</span><span class="cs mono">Grooming</span><span class="cs mono">2026</span></div>
+            <div class="client-row"><span class="cn">Key Drummond</span><span class="cs mono">Estate agency</span><span class="cs mono">2025–26</span></div>
+            <div class="client-row"><span class="cn">Tandem</span><span class="cs mono">AI studio</span><span class="cs mono">2026</span></div>
+            <div class="client-row"><span class="cn">ReShot</span><span class="cs mono">Proptech</span><span class="cs mono">2026</span></div>
+            <div class="client-row"><span class="cn">Davidson Estates</span><span class="cs mono">Estate agency</span><span class="cs mono">2026</span></div>
+            <div class="client-row"><span class="cn">UAE Greetings</span><span class="cs mono">E-commerce</span><span class="cs mono">2026</span></div>
+            <div class="client-row"><span class="cn">123 Refurbs</span><span class="cs mono">Refurbishment</span><span class="cs mono">2026</span></div>
+            <div class="client-row"><span class="cn">H+S Homebound</span><span class="cs mono">Property</span><span class="cs mono">2025</span></div>
+            <div class="client-row"><span class="cn">Drift Collective</span><span class="cs mono">Luxury stays</span><span class="cs mono">2025</span></div>
+            <div class="client-row"><span class="cn">Ankers + Rawlings</span><span class="cs mono">Development</span><span class="cs mono">2025</span></div>
+            <div class="client-row"><span class="cn">Harbourside Inventories</span><span class="cs mono">Property services</span><span class="cs mono">2025</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ HOW IT WORKS ════════ -->
-    <section class="section" id="how">
+    <!-- ============ ABOUT ============ -->
+    <section class="section" aria-labelledby="about-h">
       <div class="container">
-        <p class="section-eyebrow reveal">The journey</p>
-        <h2 class="section-title reveal">From first ring<br>to instruction won<span class="coral-text">.</span></h2>
-      </div>
-      <div class="container how-wrap">
-        <svg class="how-line" viewBox="0 0 4 1200" preserveAspectRatio="none" aria-hidden="true">
-          <path id="howPath" d="M2 0 V1200" pathLength="100"/>
-        </svg>
-        <ol class="how-steps">
-          <li class="how-step reveal">
-            <span class="how-n num">01</span>
-            <div class="how-scene how-scene--ring"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span class="ring-wave"></span><span class="ring-wave rw2"></span></div>
-            <h3>A customer calls</h3>
-            <p>Tuesday 7:52pm. A vendor three streets away decides tonight's the night to sell.</p>
-          </li>
-          <li class="how-step reveal">
-            <span class="how-n num">02</span>
-            <div class="how-scene"><div class="callwave callwave--mini on" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-            <h3>Ava answers</h3>
-            <p>Before the second ring. Warm, calm, unmistakably professional. The caller gets no queue and no voicemail.</p>
-          </li>
-          <li class="how-step reveal">
-            <span class="how-n num">03</span>
-            <div class="how-scene how-scene--list">
-              <span class="qline"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>Selling to upsize</span>
-              <span class="qline"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>Ready within 3 months</span>
-              <span class="qline"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>Not yet on market</span>
+        <div class="kicker mono">
+          <span><span class="idx">SCN 08</span> — The studio</span>
+          <span>Sandbanks, UK</span>
+        </div>
+        <div class="about-grid">
+          <div>
+            <h2 class="display reveal" id="about-h">Small by design.<br><span class="em">Built to move quickly.</span></h2>
+            <p class="lead reveal" data-delay="1" style="margin-top:28px">Fabricatr is an independent creative studio working directly with ambitious businesses. Fewer layers means faster decisions, stronger consistency and a senior creative in every conversation — with a network of trusted specialists when a project needs more hands.</p>
+            <div style="margin-top:36px" class="reveal" data-delay="2">
+              <a class="btn btn--ghost" href="about.html">More about the studio <span class="arrow">→</span></a>
             </div>
-            <h3>Ava qualifies</h3>
-            <p>Motive, timeline, position. Scored as a hot vendor lead in real time.</p>
-          </li>
-          <li class="how-step reveal">
-            <span class="how-n num">04</span>
-            <div class="how-scene how-scene--cal">
-              <span class="cal-slot">Thu</span><span class="cal-slot cal-slot--booked">Fri 2:30</span><span class="cal-slot">Sat</span>
-            </div>
-            <h3>Ava books</h3>
-            <p>A valuation, straight into your best valuer's live diary. Confirmation by SMS before the call ends.</p>
-          </li>
-          <li class="how-step reveal">
-            <span class="how-n num">05</span>
-            <div class="how-scene how-scene--crm">
-              <span class="crm-row"><span class="crm-tag">HOT</span>S. Okafor — vendor</span>
-              <span class="crm-row crm-row--sub">Notes, transcript &amp; score → CRM</span>
-            </div>
-            <h3>Ava updates the CRM</h3>
-            <p>Full notes, call summary and lead score written into Reapit, Alto or Street. Zero typing.</p>
-          </li>
-          <li class="how-step reveal">
-            <span class="how-n num">06</span>
-            <div class="how-scene how-scene--win"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span class="win-badge">INSTRUCTION&nbsp;WON</span></div>
-            <h3>Your agency wins</h3>
-            <p>Your valuer walks in prepared, on time, with a qualified vendor. The board goes up. Ava's already on the next call.</p>
-          </li>
-        </ol>
+          </div>
+          <div class="about-facts reveal" data-delay="1">
+            <div class="row"><span class="k mono">Founder</span><span class="v">Lewis Steadman</span></div>
+            <div class="row"><span class="k mono">Studio</span><span class="v">Sandbanks — Poole, UK</span></div>
+            <div class="row"><span class="k mono">Working</span><span class="v">UK + everywhere</span></div>
+            <div class="row"><span class="k mono">Departments</span><span class="v">Brand / Digital / AI / Content / Motion</span></div>
+            <div class="row"><span class="k mono">Typical projects</span><span class="v">Identity, web, campaigns, AI products</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ════════ WHILE YOU'RE SLEEPING ════════ -->
-    <section class="section night" id="night">
+    <!-- ============ AI STUDIO ============ -->
+    <section class="section dark ai-wrap" id="ai" aria-labelledby="ai-h">
+      <canvas id="ai-canvas" data-fabric data-mode="dark" aria-hidden="true"></canvas>
+      <div class="container ai-inner">
+        <div class="kicker mono">
+          <span><span class="idx">SCN 09</span> — AI studio</span>
+          <span>Dept. of what comes next</span>
+        </div>
+        <div class="ai-grid">
+          <div>
+            <h2 class="display reveal" id="ai-h">Designing<br><span class="em">what comes next.</span></h2>
+            <p class="lead reveal" data-delay="1" style="margin-top:28px">Brand thinking applied to intelligent products. We design and prototype AI interfaces, tools and automations — and we’ve shipped our own, so we know where the hype ends and the useful part starts.</p>
+            <ul class="ai-list reveal" data-delay="2" style="margin-top:32px">
+              <li><span class="mono">01</span> Brand + product design for AI companies</li>
+              <li><span class="mono">02</span> AI interfaces and prototypes</li>
+              <li><span class="mono">03</span> Automation concepts and creative technology</li>
+              <li><span class="mono">04</span> Built in public — <a class="tlink" href="projects/tandem.html">Tandem</a> and <a class="tlink" href="projects/reshot.html">ReShot</a> are ours</li>
+            </ul>
+          </div>
+          <div class="ai-demo reveal" data-delay="1">
+            <div class="dh mono"><span>EXP-014 — Latent type</span><span class="live">● Live</span></div>
+            <p class="type-lab" aria-hidden="true">Next</p>
+            <div class="dh mono"><span>Move your cursor through the letterform’s latent space</span><span id="lab-read">wght 900 / wdth 100</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="section final-cta" aria-labelledby="cta-h">
       <div class="container">
-        <p class="section-eyebrow reveal"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-moon"/></svg> Out of hours</p>
-        <h2 class="section-title reveal">While you're<br>sleeping<span class="coral-text">…</span></h2>
-        <p class="section-sub reveal" data-delay="1">A true story from every night at a HiAva agency. Watch the whole thing happen.</p>
-
-        <div class="night-stage reveal" data-delay="2" id="nightStage">
-          <canvas class="night-stars" id="nightStars" aria-hidden="true"></canvas>
-          <div class="night-clock" aria-hidden="true">
-            <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>
-            <span class="num" id="nightClock">02:17:04</span>
-          </div>
-          <ol class="night-events" id="nightEvents">
-            <li class="night-ev" data-time="02:17:04"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><div><strong>Ava answers a call</strong><span>A landlord with a 4-bed in Harborne, relocating to Dubai next month.</span></div></li>
-            <li class="night-ev" data-time="02:17:48"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><div><strong>Qualifies the lead</strong><span>Timeline confirmed. Two more properties in the portfolio. Scored: hot.</span></div></li>
-            <li class="night-ev" data-time="02:18:21"><svg class="icon" aria-hidden="true"><use href="#i-cal"/></svg><div><strong>Books a valuation</strong><span>Thursday 10:00am, synced to the branch diary. SMS confirmation sent.</span></div></li>
-            <li class="night-ev" data-time="02:18:50"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg><div><strong>Updates the CRM</strong><span>Contact created, transcript attached, follow-up task assigned.</span></div></li>
-            <li class="night-ev" data-time="02:19:12"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><div><strong>Starts AML</strong><span>ID verification link sent. Sanctions &amp; PEP screening queued.</span></div></li>
-            <li class="night-ev" data-time="02:19:46"><svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg><div><strong>Notifies your negotiator</strong><span>"Hot landlord lead, valuation Thu 10am, file attached. Sleep well."</span></div></li>
-          </ol>
-          <p class="night-saved" id="nightSaved" aria-hidden="true"><svg class="icon icon--xs"><use href="#i-bolt"/></svg>Revenue saved tonight: <span class="num" id="nightSavedNum">£0</span></p>
-          <p class="night-final" id="nightFinal">All automatic. You'll read about it over coffee<span class="coral-text">.</span></p>
+        <div class="kicker mono">
+          <span><span class="idx">SCN 10</span> — Transmission</span>
+          <span>Response within 48h — usually faster</span>
         </div>
-      </div>
-    </section>
-
-    <!-- ════════ TESTIMONIALS ════════ -->
-    <section class="section voices" id="voices">
-      <div class="container">
-        <p class="section-eyebrow reveal">From the front line</p>
-        <h2 class="section-title reveal">Agencies that said hi<span class="coral-text">.</span></h2>
-      </div>
-      <div class="voice-rows reveal" data-delay="1">
-        <div class="voice-row" data-dir="1">
-          <div class="voice-track">
-            <figure class="voice-card"><blockquote>"We stopped missing calls the day Ava started. Valuations from out-of-hours enquiries are up 38% in a quarter."</blockquote><figcaption><strong>Sarah Whitfield</strong><span>Director · Whitfield &amp; Co, Manchester</span><em class="coral-text">+38% valuations</em></figcaption></figure>
-            <figure class="voice-card"><blockquote>"AML used to eat two days a week. Ava chases every document overnight. Our last audit took forty minutes."</blockquote><figcaption><strong>James Okonkwo</strong><span>Compliance Lead · Harte Residential</span><em class="coral-text">2 days/week saved</em></figcaption></figure>
-            <figure class="voice-card"><blockquote>"Applicants get answered in eight seconds at midnight. We look like the biggest agency in town. We're six people."</blockquote><figcaption><strong>Priya Shah</strong><span>Lettings Manager · Nest &amp; Found</span><em class="coral-text">8s response, 24/7</em></figcaption></figure>
-            <figure class="voice-card"><blockquote>"I was sceptical an AI could speak to my vendors. Now vendors compliment us on 'the lovely lady who always answers'."</blockquote><figcaption><strong>Tom Brennan</strong><span>Owner · Brennan Estates, Leeds</span><em class="coral-text">0 missed calls</em></figcaption></figure>
-          </div>
+        <h2 id="cta-h" class="reveal">Let’s build something<br><span class="em">worth remembering.</span></h2>
+        <div class="cta-row reveal" data-delay="1">
+          <a class="btn" href="contact.html">Start a project <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="mailto:lewis@fabricatr.com">Email Lewis</a>
+          <a class="btn btn--ghost" href="https://wa.link/12v2dp">WhatsApp</a>
+          <a class="btn btn--ghost" href="work.html">View work</a>
         </div>
-        <div class="voice-row" data-dir="-1">
-          <div class="voice-track">
-            <figure class="voice-card"><blockquote>"Ava booked 11 viewings on Boxing Day. Our competitors' phones rang out. That week paid for her for the year."</blockquote><figcaption><strong>Megan Doyle</strong><span>Branch Manager · Doyle &amp; Partners</span><em class="coral-text">11 bookings, 1 bank holiday</em></figcaption></figure>
-            <figure class="voice-card"><blockquote>"Vendor updates go out every Friday without anyone touching a keyboard. Withdrawals are down by half."</blockquote><figcaption><strong>Oliver Hartley-Price</strong><span>Sales Director · HPL Homes</span><em class="coral-text">−50% withdrawals</em></figcaption></figure>
-            <figure class="voice-card"><blockquote>"The CRM is finally accurate. Every call, every note, every score — written up before the call even ends."</blockquote><figcaption><strong>Aisha Rahman</strong><span>Operations · Cornerstone Lettings</span><em class="coral-text">100% CRM hygiene</em></figcaption></figure>
-            <figure class="voice-card"><blockquote>"We hired Ava instead of a second negotiator. She does the admin of three people and never takes a holiday."</blockquote><figcaption><strong>Daniel Craven</strong><span>Director · Craven &amp; Sons, Bristol</span><em class="coral-text">3× admin capacity</em></figcaption></figure>
-          </div>
+        <div class="cta-side mono reveal" data-delay="2">
+          <span>Direct line — <a class="tlink" href="mailto:lewis@fabricatr.com">lewis@fabricatr.com</a></span>
+          <span>A few honest sentences beat a perfect brief. We’ll bring the questions.</span>
         </div>
-      </div>
-    </section>
-
-    <!-- ════════ ROI ════════ -->
-    <section class="section section--tint" id="roi">
-      <div class="container">
-        <p class="section-eyebrow reveal">The maths</p>
-        <h2 class="section-title reveal">What is silence<br>costing you<span class="coral-text">?</span></h2>
-        <p class="section-sub reveal" data-delay="1">Slide your agency's numbers in. Industry data says roughly 1 in 4 calls to agencies goes unanswered — watch what happens when it's zero.</p>
-
-        <div class="roi-layout reveal" data-delay="2">
-          <div class="roi-controls">
-            <div class="roi-field">
-              <label for="roiStaff">Team size</label>
-              <div class="roi-readout"><span class="num" id="roiStaffVal">6</span> people</div>
-              <input type="range" id="roiStaff" min="2" max="50" step="1" value="6">
-            </div>
-            <div class="roi-field">
-              <label for="roiCalls">Inbound calls per week</label>
-              <div class="roi-readout"><span class="num" id="roiCallsVal">400</span> calls</div>
-              <input type="range" id="roiCalls" min="50" max="2000" step="10" value="400">
-            </div>
-            <div class="roi-field">
-              <label for="roiInstr">Instructions per month</label>
-              <div class="roi-readout"><span class="num" id="roiInstrVal">12</span> instructions</div>
-              <input type="range" id="roiInstr" min="2" max="100" step="1" value="12">
-            </div>
-            <div class="roi-field">
-              <label for="roiFee">Average fee</label>
-              <div class="roi-readout">£<span class="num" id="roiFeeVal">3,800</span></div>
-              <input type="range" id="roiFee" min="1000" max="20000" step="100" value="3800">
-            </div>
-          </div>
-          <div class="roi-outputs">
-            <div class="roi-out">
-              <p class="pane-label">Hours saved · per month</p>
-              <p class="roi-big"><span class="num" id="outHours">0</span><em>hrs</em></p>
-            </div>
-            <div class="roi-out">
-              <p class="pane-label">Missed leads recovered · per year</p>
-              <p class="roi-big"><span class="num" id="outLeads">0</span><em>leads</em></p>
-            </div>
-            <div class="roi-out roi-out--hero">
-              <p class="pane-label">Revenue recovered · per year</p>
-              <p class="roi-big coral-text">£<span class="num" id="outRevenue">0</span></p>
-            </div>
-            <div class="roi-out">
-              <p class="pane-label">Projected growth in instructions</p>
-              <p class="roi-big">+<span class="num" id="outGrowth">0</span><em>%</em></p>
-            </div>
-            <p class="roi-note">Modelled on industry averages: ~24% of inbound agency calls go unanswered, ~38% of calls are new enquiries, with typical appraisal &amp; win rates applied. Your demo includes the model calibrated to your branch.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ FINALE ════════ -->
-    <section class="finale" id="finale">
-      <canvas id="finaleNet" aria-hidden="true"></canvas>
-      <div class="container finale-inner">
-        <div class="finale-orb reveal" aria-hidden="true">
-          <canvas id="finaleOrbCanvas"></canvas>
-        </div>
-        <p class="finale-line reveal" data-delay="1">The future agency<br>already has an AI employee<span class="coral-text">.</span></p>
-        <p class="finale-meet reveal" data-delay="2">Meet <span class="coral-text">Ava</span><span class="pulse-dot pulse-dot--lg" aria-hidden="true"></span></p>
-        <div class="reveal" data-delay="3">
-          <a class="btn btn--primary btn--xl btn--glow" href="mailto:hello@hiava.ai?subject=Book%20a%20demo%20with%20Ava" data-magnetic>Book a demo</a>
-        </div>
-        <p class="finale-sub reveal" data-delay="4">Fifteen minutes. Your phone number stays the same. Ava starts Monday.</p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <p class="brand">Hi<span class="brand-accent">Ava</span><span class="brand-dot" aria-hidden="true"></span></p>
-        <p class="footer-tag">Smart, calm support for every busy agency.</p>
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <span class="brand-mark" style="font-size:1.3rem">Fabricatr<sup style="color:var(--blue)">®</sup></span>
+          <p style="margin-top:14px">Independent creative studio. Brand, digital, AI, content and motion — fabricated as one system.</p>
+        </div>
+        <div>
+          <h4 class="mono">Menu</h4>
+          <ul>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="mono">Elsewhere</h4>
+          <ul>
+            <li><a href="https://instagram.com/madebyfabricatr">Instagram — @madebyfabricatr</a></li>
+            <li><a href="https://www.framer.com/@fabricatr/">Framer — @fabricatr</a></li>
+            <li><a href="https://heytandem.co.uk">Tandem — our AI studio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="mono">Contact</h4>
+          <ul>
+            <li><a href="mailto:lewis@fabricatr.com">lewis@fabricatr.com</a></li>
+            <li><a href="https://wa.link/12v2dp">+44 7834 234 730 — WhatsApp</a></li>
+            <li><span style="color:var(--bone-70)">Sandbanks — Poole, UK</span></li>
+          </ul>
+        </div>
       </div>
-      <ul class="footer-links">
-        <li><a href="#demo">Live demo</a></li>
-        <li><a href="#features">Capabilities</a></li>
-        <li><a href="#roi">ROI</a></li>
-        <li><a href="mailto:hello@hiava.ai">hello@hiava.ai</a></li>
-      </ul>
-      <p class="footer-fine">© <span id="year">2026</span> HiAva. Say hi to Ava.</p>
+      <span class="wordmark-huge" aria-hidden="true">Fabricatr<span class="dot">.</span></span>
+      <div class="foot-legal mono">
+        <span>© <span class="js-year">2026</span> Fabricatr. All rights reserved.</span>
+        <a href="privacy.html">Privacy</a>
+        <span>Set in Archivo, Instrument Serif &amp; IBM Plex Mono</span>
+        <span>LDN — <span id="ldn-clock">--:--:--</span></span>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/fabric.js" defer></script>
 </body>
 </html>
