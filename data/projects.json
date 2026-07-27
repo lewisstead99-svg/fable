@@ -1,0 +1,373 @@
+{
+  "projects": [
+    {
+      "slug": "tandem",
+      "file_no": "FBR-26-03",
+      "name": "Tandem",
+      "client": "Tandem",
+      "sector": "AI automation studio",
+      "year": "2026",
+      "services": ["Brand identity", "Website", "Positioning", "Messaging"],
+      "one_liner": "AI that works alongside you.",
+      "summary": "A sharper brand and website for an AI automation studio — built to make AI feel practical, credible and commercially useful.",
+      "featured": true,
+      "order": 1,
+      "media": { "type": "video", "src": "https://www.fabricatr.com/assets/tandem-screen.mp4", "poster": "https://www.fabricatr.com/assets/tandem-card.webp", "alt": "Tandem website in motion — dark, system-led interface", "caption": "Fig. A — The Tandem site, live" },
+      "context": [
+        "Tandem needed a brand and website that could make AI feel practical, useful and easy to understand. In a market full of vague AI promises and overcomplicated consultancy language, the goal was to create something sharper — a brand that clearly shows how AI agents and automations work alongside real teams to remove repetitive manual work.",
+        "We shaped the whole experience around clarity, confidence and outcomes. Rather than presenting Tandem as another futuristic AI company, the brand was built to feel grounded, operator-led and commercially useful."
+      ],
+      "challenge_intro": "AI is a crowded space, and most businesses are still unsure what it actually means for them. Tandem had to explain a technical service without feeling intimidating, vague or consultancy-led — and land the offer within seconds.",
+      "focus": [
+        "Make AI agents and automation feel practical, not abstract",
+        "Build a clear offer around time saved and operational efficiency",
+        "Strip out AI buzzwords and empty future-talk",
+        "Win trust with businesses that are curious but cautious",
+        "Position Tandem as operators who build working systems, not slide decks",
+        "Move visitors from problem to solution fast"
+      ],
+      "approach": [
+        "We focused the brand around one core idea: AI should pull its weight. The site shows that Tandem doesn’t advise on AI — it builds systems that work inside the tools and processes businesses already use.",
+        "The design direction is sharp, dark and system-led, with messaging that keeps the offer direct and commercially grounded. The site is structured around the services that matter — AI agents, workflow automation, custom systems and training — with clear examples of the manual work each one removes."
+      ],
+      "delivered": ["Brand direction", "Website design + build", "Service positioning", "Messaging system", "Conversion-led CTAs", "Process, proof, pricing + FAQ architecture"],
+      "outcome": "Tandem launched with a brand that makes a technical offer feel simple: modern and intelligent, but direct enough for a busy owner to understand in one scroll.",
+      "live": { "label": "heytandem.co.uk", "url": "https://heytandem.co.uk" },
+      "seo": { "title": "Tandem — Brand & Website for an AI Automation Studio | Fabricatr", "desc": "How Fabricatr built Tandem’s identity and website — turning AI automation into a clear, credible offer for real businesses." }
+    },
+    {
+      "slug": "taylored",
+      "file_no": "FBR-26-01",
+      "name": "Taylored",
+      "client": "Taylored Barbering",
+      "sector": "Grooming",
+      "year": "2026",
+      "services": ["Brand identity", "Website", "Shopfront", "Print"],
+      "one_liner": "The new standard for cuts, shaves and culture.",
+      "summary": "A sharper brand and website for a modern barbershop — precise, confident and easy to book.",
+      "featured": true,
+      "order": 2,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/taylored-card.webp", "alt": "Taylored Barbering takeaway cups with the new identity, held in the wild", "caption": "Fig. A — Identity in the wild" },
+      "context": [
+        "Taylored Barbering needed an online presence that matched the quality of the service delivered in the chair. The brand already had a strong local feel, but the digital experience needed more polish, clearer messaging and a stronger visual direction to reflect the standard of the cuts, the atmosphere of the shop and the loyalty of its client base.",
+        "The goal: premium without being overdone, stylish without being intimidating, and simple enough to turn visitors into bookings."
+      ],
+      "challenge_intro": "For a service-led brand, first impressions decide bookings. The foundations were strong — the presentation needed to work harder.",
+      "focus": [
+        "A more consistent, professional visual style",
+        "A website that communicates quality in seconds",
+        "A booking journey that feels simple and direct",
+        "Premium grooming balanced with local approachability",
+        "Clearer, more actionable service information",
+        "A polished experience across mobile and desktop"
+      ],
+      "approach": [
+        "We built the direction around craft. Clean, considered and masculine, with enough personality to stand out from generic barbershop sites — bold typography, strong spacing, refined imagery and a simple layout system.",
+        "The site is structured around the actions that matter: understand the shop, see the standard, check services, book. Every section kept clear and intentional."
+      ],
+      "delivered": ["Visual identity refinement", "Website design system", "Booking-led CTAs", "Mobile-first experience", "Shopfront + print", "Copy focused on craft and confidence"],
+      "outcome": "A brand experience that feels precise and confident — established enough for new clients to trust, simple enough for regulars to book in seconds.",
+      "seo": { "title": "Taylored Barbering — Brand & Website | Fabricatr", "desc": "A sharper brand and website for a modern barbershop — craft-led identity, booking-first web experience, shopfront and print." }
+    },
+    {
+      "slug": "key-drummond",
+      "file_no": "FBR-26-02",
+      "name": "Key Drummond",
+      "client": "Key Drummond",
+      "sector": "Estate agency",
+      "year": "2025–26",
+      "services": ["Property marketing", "Campaign design", "Social content system", "Print"],
+      "one_liner": "Prime coastal property, presented properly.",
+      "summary": "Marketing and social design for an established coastal estate agency across Poole, Lilliput, Canford Cliffs and Sandbanks.",
+      "featured": true,
+      "order": 3,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/kd-card.webp", "alt": "Key Drummond Spring Edition property brochures, printed and stacked", "caption": "Fig. A — Spring Edition, in print" },
+      "context": [
+        "Key Drummond already had an established name across the Poole, Lilliput, Canford Cliffs and Sandbanks property market. The job wasn’t to reinvent the brand — it was to support it with stronger visual marketing across social media, property campaigns and day-to-day promotional content.",
+        "We created clean, property-led design assets that help Key Drummond communicate listings, market updates, open days and brand messages in a more polished, consistent way — matched to the expectations of a high-value coastal market."
+      ],
+      "challenge_intro": "In estate agency, presentation sells — especially when the stock is premium coastal homes. The marketing needed to feel elevated, clear and recognisable, while staying flexible enough for daily social use.",
+      "focus": [
+        "Stronger visual consistency across social content",
+        "Property posts that feel premium and attention-grabbing",
+        "Clear assets for open days, new listings and campaigns",
+        "Professional without feeling cold or corporate",
+        "Sharper presentation of property details, photography and CTAs",
+        "Showing up online with more polish and confidence"
+      ],
+      "approach": [
+        "One simple rule: the property is always the hero. The design system supports the photography rather than overpowering it — clean layouts, refined typography, strong spacing and subtle branded details.",
+        "Social content is built to work in-feed within seconds: clear hierarchy, strong imagery, and messaging that makes the value of every post obvious. From listing graphics to campaign assets, everything is consistent, professional and easy for the agency to use."
+      ],
+      "delivered": ["Social media design system", "Property marketing graphics", "New listing + open day assets", "Campaign visuals", "Story + feed layouts", "Enquiry and viewing CTAs", "Print — Spring Edition brochures"],
+      "outcome": "A marketing system that keeps every touchpoint — from a story frame to a printed brochure — at the standard the properties deserve.",
+      "seo": { "title": "Key Drummond — Property Marketing & Campaigns | Fabricatr", "desc": "Property marketing and social content for an established coastal estate agency — Poole, Canford Cliffs and Sandbanks. By Fabricatr." }
+    },
+    {
+      "slug": "reshot",
+      "file_no": "FBR-26-04",
+      "name": "ReShot",
+      "client": "ReShot",
+      "sector": "Proptech",
+      "year": "2026",
+      "services": ["Brand identity", "Product design", "Website", "Mascot system"],
+      "one_liner": "You snap it. We fix it.",
+      "summary": "A fast, conversion-focused brand for AI property photo enhancement — built by Fabricatr, for estate agents.",
+      "featured": true,
+      "order": 4,
+      "media": { "type": "video", "src": "https://www.fabricatr.com/assets/reshot-hero.mp4", "poster": "https://www.fabricatr.com/assets/reshot-card.webp", "alt": "ReShot brand and product in motion, including the mascot character system", "caption": "Fig. A — Meet the mascot" },
+      "context": [
+        "ReShot was created to solve a simple but common problem in estate agency: property photos often need to look better, but agents don’t always have the time, budget or workflow for a traditional editing process.",
+        "We built the identity, website and product experience around one clear promise — upload a photo, enhance it, get a polished result fast. A direct, memorable platform for agents who want better listings without more work."
+      ],
+      "challenge_intro": "Estate agents are busy, impatient and surrounded by software that overcomplicates simple tasks. ReShot had to communicate its value immediately.",
+      "focus": [
+        "An offer understood in seconds",
+        "Modern without becoming too technical",
+        "Before-and-after results as the main proof",
+        "A site that drives sign-ups and first uploads quickly",
+        "Simple enough for everyday agency use",
+        "Pricing and turnaround that feel clear and low-risk"
+      ],
+      "approach": [
+        "Everything is built around clarity. A bold, clean, instantly recognisable identity — a sharp blue-led system, direct messaging and a simple product flow that’s easy to act on.",
+        "Rather than over-explaining the technology, the results are the hero: before-and-after visuals, short copy and clear calls to action show agents exactly what ReShot does and why it matters."
+      ],
+      "delivered": ["Brand identity + mascot", "Conversion-focused website", "Product UX — upload-led journey", "Before/after proof sections", "Pricing + CTA structure", "Messaging built on speed and ease"],
+      "outcome": "A proptech brand that gets out of its own way — the product promise lands on first contact, and the path from visitor to first upload is friction-free.",
+      "seo": { "title": "ReShot — Brand & Product for AI Photo Enhancement | Fabricatr", "desc": "Brand identity, website and product direction for ReShot — AI property photo enhancement for estate agents. A Fabricatr original." }
+    },
+    {
+      "slug": "drift",
+      "file_no": "FBR-25-05",
+      "name": "Drift Collective",
+      "client": "Drift Collective",
+      "sector": "Luxury stays",
+      "year": "2025",
+      "services": ["Brand identity", "Website", "Positioning", "Print"],
+      "one_liner": "Coastal living, curated properly.",
+      "summary": "A refined hospitality brand for luxury short-term stays — built for both homeowners and guests.",
+      "featured": true,
+      "order": 5,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/drift-card.webp", "alt": "Drift Collective business cards — refined coastal identity in print", "caption": "Fig. A — Print, properly" },
+      "context": [
+        "Drift needed a brand and digital presence that reflected the quality of the homes it represents. Operating in the high-end short-term letting market, the brand had to work twice: building trust with property owners while creating desire for guests looking for a more elevated stay.",
+        "The goal was to move away from the feel of a standard holiday-let company — towards something refined, calm and lifestyle-led, built around premium coastal living and thoughtful hospitality."
+      ],
+      "challenge_intro": "Luxury that feels forced isn’t luxury. In a market full of generic holiday-let brands, Drift needed an identity that felt boutique, trustworthy and aligned with the calibre of homes it wanted to represent.",
+      "focus": [
+        "A premium identity for luxury short-term stays",
+        "A calmer, more lifestyle-led web experience",
+        "Trust with high-value property owners",
+        "Homes presented with desire and professionalism",
+        "Hospitality warmth balanced with management credibility",
+        "Messaging that works for guests and owners alike"
+      ],
+      "approach": [
+        "We treated Drift as more than a booking platform — a careful, hands-on hospitality partner that understands presentation, guest experience and the expectations that come with high-end homes.",
+        "The visual direction is refined and spacious: clean layouts, soft coastal cues and premium property imagery that create a sense of calm. Messaging focuses on ease, care and attention to detail."
+      ],
+      "delivered": ["Brand identity", "Website design + structure", "Owner-side positioning", "Guest-facing copy", "Property-led layouts", "Print + stationery", "Campaign direction"],
+      "outcome": "A hospitality brand that earns both audiences: owners see a credible custodian for their property, guests see a stay worth wanting.",
+      "seo": { "title": "Drift Collective — Luxury Stays Brand & Website | Fabricatr", "desc": "A refined hospitality brand for luxury short-term coastal stays — identity, website and positioning by Fabricatr." }
+    },
+    {
+      "slug": "hs-homebound",
+      "file_no": "FBR-25-06",
+      "name": "H+S Homebound",
+      "client": "H+S Homebound",
+      "sector": "Property",
+      "year": "2025",
+      "services": ["Creative direction", "Brand system", "Website", "Site hoarding"],
+      "one_liner": "Thoughtfully crafted, bespoke homes.",
+      "summary": "A visual identity for a home-led brand with feeling — warm, considered and commercially clear.",
+      "featured": true,
+      "order": 6,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/homebound-card.webp", "alt": "H+S Homebound site hoarding at The Treehouse, Western Road", "caption": "Fig. A — On site, Western Road" },
+      "context": [
+        "H+S Homebound needed a visual and digital presence that could communicate more than a service. The brand had a strong idea behind it — rooted in home, lifestyle and emotional connection — but needed a clearer system to bring that idea to life across the website, content and customer journey.",
+        "We defined the creative direction, sharpened the presentation and built a more elevated online experience: personal, premium and easy to understand, with the structure to grow."
+      ],
+      "challenge_intro": "The emotional foundation was strong. The brand needed a visual language that felt soft and human without becoming vague — and premium without feeling cold.",
+      "focus": [
+        "The brand idea communicated clearly at first glance",
+        "Consistency across web and social",
+        "A calmer, more intentional website structure",
+        "Lifestyle warmth balanced with commercial credibility",
+        "A more polished, memorable, trustworthy experience"
+      ],
+      "approach": [
+        "We grounded the brand in a simple idea: home should feel considered, personal and beautifully presented. From there — soft editorial layouts, warm imagery, refined typography and a more spacious web experience.",
+        "The point was never to over-design it. Every section gives the brand room to breathe, guiding people through the story while keeping the experience clean and calm."
+      ],
+      "delivered": ["Creative direction", "Brand design system", "Website layouts", "Messaging + purpose story", "Site hoarding — The Treehouse", "Social + campaign styling"],
+      "outcome": "An identity that carries feeling without losing structure — warm where it matters, commercial where it counts.",
+      "seo": { "title": "H+S Homebound — Brand & Website for Bespoke Homes | Fabricatr", "desc": "Creative direction, brand system and website for H+S Homebound — thoughtfully crafted, bespoke homes. By Fabricatr." }
+    },
+    {
+      "slug": "davidson-estates",
+      "file_no": "FBR-26-07",
+      "name": "Davidson Estates",
+      "client": "Davidson Estates",
+      "sector": "Estate agency",
+      "year": "2026",
+      "services": ["Brand refinement", "Website", "UX structure", "CTA strategy"],
+      "one_liner": "Sales & lettings, properly presented.",
+      "summary": "A refined digital identity for a modern estate agency — clear, confident and easy to trust.",
+      "featured": false,
+      "order": 7,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/davidson-card.webp", "alt": "Davidson Estates sales and lettings website on screen", "caption": "Fig. A — Sales & lettings, on screen" },
+      "context": [
+        "Davidson Estates needed a website and brand experience aligned with the level of service they actually provide. The foundations of a trustworthy agency were there — but the digital presence lacked the polish, structure and confidence to stand out in a competitive local market.",
+        "We refined the visual direction, improved the website experience and created a clearer, more professional way for customers to understand the brand — established, approachable and premium, without losing the personal feel of an independent agency."
+      ],
+      "challenge_intro": "The agency had the local knowledge. The brand needed more authority — and the online experience had to build trust faster with buyers, sellers, landlords and tenants.",
+      "focus": [
+        "Consistency across every digital touchpoint",
+        "Trust, service and market expertise communicated instantly",
+        "Cleaner structure for property pages and services",
+        "Premium without becoming cold or corporate",
+        "Clearer CTAs for valuations, listings and enquiries"
+      ],
+      "approach": [
+        "We simplified the direction: clarity, strong typography, clean layouts and a warmer visual system that works across both sales and lettings.",
+        "The website feels modern but familiar — giving users what they need quickly while keeping the experience calm and professional. Every section is structured around trust: who Davidson Estates are, what they offer, where they operate, and how easy the next step is."
+      ],
+      "delivered": ["Refined visual direction", "Website design system", "Services + listings structure", "Valuation-led CTAs", "A digital presence built for long-term growth"],
+      "outcome": "An independent agency that now reads as established and premium on first contact — with clearer journeys to the enquiries that matter.",
+      "seo": { "title": "Davidson Estates — Estate Agency Brand & Website | Fabricatr", "desc": "A refined digital identity and website for a modern estate agency — structure, trust and valuation-led CTAs. By Fabricatr." }
+    },
+    {
+      "slug": "uae-greetings",
+      "file_no": "FBR-26-08",
+      "name": "UAE Greetings",
+      "client": "UAE Greetings",
+      "sector": "E-commerce",
+      "year": "2026",
+      "services": ["E-commerce design", "Brand presentation", "Store build"],
+      "one_liner": "Heartfelt cards, sold beautifully.",
+      "summary": "An e-commerce experience for a greeting cards brand — warm product presentation with a checkout-first build.",
+      "featured": false,
+      "order": 8,
+      "media": { "type": "video", "src": "https://www.fabricatr.com/assets/uae-hero.mp4", "poster": "https://www.fabricatr.com/assets/uae-card.webp", "alt": "UAE Greetings online store in motion", "caption": "Fig. A — The store, live" },
+      "context": [
+        "UAE Greetings sells cards made to be kept — and the store had to treat them that way. The brief was an e-commerce experience where warm, personal products are presented beautifully without slowing down the path to purchase.",
+        "This is a shorter case file: the work speaks in the storefront itself."
+      ],
+      "challenge_intro": "Greeting cards are an emotional purchase made quickly. The store needed personality at first glance and zero friction from product to checkout.",
+      "focus": [
+        "Product-first presentation that feels warm, not clinical",
+        "A browsing experience built for gifting occasions",
+        "A short, simple path from product to payment",
+        "A brand presence that scales with the range"
+      ],
+      "approach": [
+        "We designed the store around the cards themselves — generous product imagery, clear occasion-led navigation and a checkout flow with nothing in the way."
+      ],
+      "delivered": ["Store design", "Product presentation system", "Occasion-led navigation", "Checkout-first UX"],
+      "outcome": "A storefront that sells the feeling as well as the card — and stays out of the way when it’s time to buy.",
+      "seo": { "title": "UAE Greetings — E-commerce Design & Build | Fabricatr", "desc": "E-commerce design and build for UAE Greetings — heartfelt cards, sold beautifully. By Fabricatr." }
+    },
+    {
+      "slug": "123-refurbs",
+      "file_no": "FBR-26-09",
+      "name": "123 Refurbs",
+      "client": "123 Refurbs",
+      "sector": "Home refurbishment",
+      "year": "2026",
+      "services": ["Website", "Service presentation", "Copy + messaging", "Local positioning"],
+      "one_liner": "Precision & elegance, on screen.",
+      "summary": "A polished website for a specialist refurbishment company working across Bournemouth, Poole, Sandbanks and Canford Cliffs.",
+      "featured": false,
+      "order": 9,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/refurbs-card.webp", "alt": "123 Refurbs website — project-led layout on screen", "caption": "Fig. A — Project-led, on screen" },
+      "context": [
+        "123 Refurbs needed a website that reflected the quality of the refurbishments they deliver — high-end kitchen and bathroom work across Bournemouth and Poole, including Sandbanks, Canford Cliffs and Lilliput.",
+        "Rather than overcomplicating the brand, we built a clean, visual-led website that showcases projects, explains services clearly and gives homeowners confidence before they enquire."
+      ],
+      "challenge_intro": "For a refurbishment company, trust is everything. The site had to feel polished without becoming corporate, and practical without feeling basic.",
+      "focus": [
+        "Kitchens and bathrooms presented in a premium way",
+        "A clearer, easier-to-understand service offer",
+        "A stronger first impression for homeowners",
+        "Trust built through project-led visuals",
+        "Local, established and reliable positioning",
+        "Sharper calls to action for quote enquiries"
+      ],
+      "approach": [
+        "Finished work first. Project imagery, clean layouts and direct messaging carry the standard of the refurbishments.",
+        "The structure follows what customers actually need — kitchen makeovers, bathroom refurbishments, plumbing and heating — with a simple journey from viewing work to requesting a quote."
+      ],
+      "delivered": ["Website design + structure", "Service presentation", "Project-led layouts", "Homepage copy + messaging", "Quote-focused CTAs", "Local positioning"],
+      "outcome": "A site where the craftsmanship does the convincing — clearer services, stronger first impression, easier enquiries.",
+      "seo": { "title": "123 Refurbs — Website for a Specialist Refurbishment Company | Fabricatr", "desc": "A polished, project-led website for a kitchen and bathroom refurbishment specialist across Poole and Bournemouth. By Fabricatr." }
+    },
+    {
+      "slug": "ankers-rawlings",
+      "file_no": "FBR-25-10",
+      "name": "Ankers + Rawlings",
+      "client": "Ankers + Rawlings",
+      "sector": "Property development",
+      "year": "2025",
+      "services": ["Development signage", "Print-ready artwork", "Campaign design"],
+      "one_liner": "Building on the coast, branded to match.",
+      "summary": "Development signage for a premium coastal property project — a considered on-site presence that signals quality before the show home exists.",
+      "featured": false,
+      "order": 10,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/ankers-card.webp", "alt": "Ankers + Rawlings Olympus campaign billboard on site", "caption": "Fig. A — The Olympus campaign, roadside" },
+      "context": [
+        "Ankers + Rawlings needed clean, professional signage to support the marketing of one of their developments. For a development, the first impression usually happens before anyone speaks to an agent or opens a website — at the roadside.",
+        "The signage had to feel polished, easy to read and right for the local area: a considered on-site presence that attracts passing traffic, prospective buyers and local interest."
+      ],
+      "challenge_intro": "Property signage has to do more than display information. It needs to create trust, signal quality and make the development feel established before the finished home exists — without becoming loud, cluttered or generic.",
+      "focus": [
+        "A clean, professional on-site marketing asset",
+        "A more premium feel from first glance",
+        "Readability at distance and at speed",
+        "Brand presence balanced with practical sales information",
+        "Signage appropriate for a residential setting"
+      ],
+      "approach": [
+        "Simplicity and clarity. Strong hierarchy, clean spacing and a professional visual style built for a real-world roadside setting.",
+        "No overcomplication — a smart, balanced design carrying the developer’s name, the development message and the key call to action, refined and easy to understand."
+      ],
+      "delivered": ["Development sign design", "Print-ready artwork", "Information hierarchy", "Typography + spacing refinement", "On-site marketing support"],
+      "outcome": "An on-site presence that holds its own next to the homes being built — quality signalled from the first drive-past.",
+      "seo": { "title": "Ankers + Rawlings — Development Signage & Campaign | Fabricatr", "desc": "Premium development signage and campaign design for a coastal property project. By Fabricatr." }
+    },
+    {
+      "slug": "harbourside",
+      "file_no": "FBR-25-11",
+      "name": "Harbourside Inventories",
+      "client": "Harbourside Inventories",
+      "sector": "Property services",
+      "year": "2025",
+      "services": ["Brand direction", "Marketing design", "Messaging", "Stationery"],
+      "one_liner": "The detail people, given the details.",
+      "summary": "A cleaner brand presence for a specialist property inventory service — clarity, trust and accuracy, by design.",
+      "featured": false,
+      "order": 11,
+      "media": { "type": "image", "src": "https://www.fabricatr.com/assets/harbourside-card.webp", "alt": "Harbourside Inventories stationery system", "caption": "Fig. A — The stationery system" },
+      "context": [
+        "Harbourside Inventories needed a more polished way to communicate its services to landlords, letting agents and property professionals. In a sector where accuracy, speed and reliability decide who gets hired, the brand had to feel credible from the first interaction.",
+        "The aim wasn’t to overcomplicate a practical service — it was to make it sharper, more consistent and better suited to the property market it serves."
+      ],
+      "challenge_intro": "Inventory services live on trust. Agents and landlords comparing providers need to feel the reports will be accurate, thorough and professionally delivered — communicated in seconds, not paragraphs.",
+      "focus": [
+        "A more professional, trustworthy presence",
+        "Services communicated clearly and simply",
+        "A cleaner visual style for property-focused marketing",
+        "Confidence with landlords, agents and property managers",
+        "Organised, accurate and dependable — visibly",
+        "Assets ready for outreach and enquiries"
+      ],
+      "approach": [
+        "Clarity over noise. A clean, dependable visual presence that makes the service easy to understand and simple to enquire about.",
+        "Structured layouts, clear typography and property-led messaging — every element designed to support confidence, from how services are explained to how the brand appears across digital, print and marketing."
+      ],
+      "delivered": ["Brand + visual direction", "Marketing design support", "Service messaging", "Property-led layouts", "CTA structure", "Stationery system"],
+      "outcome": "A detail-obsessed service that finally looks like one — organised, accurate and easy to choose.",
+      "seo": { "title": "Harbourside Inventories — Brand for a Property Inventory Service | Fabricatr", "desc": "Brand direction and marketing design for a specialist property inventory service — clarity, trust and accuracy. By Fabricatr." }
+    }
+  ]
+}
